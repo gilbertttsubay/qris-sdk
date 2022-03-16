@@ -46,8 +46,10 @@ class QRDetailPaymentTVCellAstrapay: UITableViewCell {
         self.paymentNameLabel.text = self.paymentName
 //        shimmerView.contentView = self.paymentImage.image
 
-//        self.balanceLabel.text = self.delegate?.getUserBalance() ?? "Rp 0"
-        self.balanceLabel.text = Prefs.getUser()?.balance?.toIDRQR() ?? "Rp 0"
+
+    //ini belum tau delegatenya bener apa ga?
+        self.balanceLabel.text = self.delegateSDK?.getUserBalance() ?? "Rp 0"
+//        self.balanceLabel.text = Prefs.getUser()?.balance?.toIDRQR() ?? "Rp 0"
         self.informationLabel.text = content.information
         self.selectedPaymentImage.image = UIImage(named: self.nameSelectedImage)
 
@@ -62,10 +64,11 @@ class QRDetailPaymentTVCellAstrapay: UITableViewCell {
         self.containerView.layer.borderColor = QRBaseColor.QRProperties.baseDisabledColor.cgColor
         self.selectionStyle = .none
 
-//        var userBalance: Int = Int(self.delegate?.getUserBalance() ?? "0")
 
         //MARK: Perlu delegate ke luar
-        var userBalance: Int = Int(Prefs.getUser()?.balance ?? 0)
+//        var userBalance: Int = Int(Prefs.getUser()?.balance ?? 0)
+        var userBalance: Int = Int(self.delegateSDK?.getUserBalance() ?? "0") ?? 0
+
         self.delegate?.didAstrapayCellReloaded(userBalance: userBalance)
         self.viewModel.initVM(content: content, userBalance:  userBalance)
 

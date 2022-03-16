@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0D1A805E27E1C185007B5984 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1A805D27E1C185007B5984 /* AppDelegate.swift */; };
-		0D1A806027E1C185007B5984 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1A805F27E1C185007B5984 /* SceneDelegate.swift */; };
 		0D1A806227E1C185007B5984 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1A806127E1C185007B5984 /* ViewController.swift */; };
 		0D1A806527E1C185007B5984 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D1A806327E1C185007B5984 /* Main.storyboard */; };
 		0D1A806727E1C186007B5984 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D1A806627E1C186007B5984 /* Assets.xcassets */; };
@@ -164,7 +163,13 @@
 		0D1A81FE27E1C1F3007B5984 /* BarlowExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0D1A815C27E1C1F3007B5984 /* BarlowExtraBold.ttf */; };
 		0D1A81FF27E1C1F3007B5984 /* BarlowThin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0D1A815D27E1C1F3007B5984 /* BarlowThin.ttf */; };
 		0D1A820027E1C1F3007B5984 /* CacheAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1A815F27E1C1F3007B5984 /* CacheAuthentication.swift */; };
-		12A055A2F4B8898777F63436 /* Pods_qris_sdk_new_1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36A0CC501C97C334219F0712 /* Pods_qris_sdk_new_1.framework */; };
+		1EEB01B272B4243786A35370 /* QRCodeResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB08AB829A83C5228F8E92 /* QRCodeResp.swift */; };
+		1EEB02D0B97CB07FCAA3E47F /* QRAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB09EDDFFC9529F521F8C5 /* QRAlert.swift */; };
+		1EEB034A88EE62FC9C851640 /* QRPaylaterMauCashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB081A913291C3E91935F2 /* QRPaylaterMauCashModel.swift */; };
+		1EEB093858C59FBBE3264167 /* QRAPPopUpErrorVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EEB0AFF76CC387CA11ABCB3 /* QRAPPopUpErrorVC.xib */; };
+		1EEB0A406BC9BE7F77D33BEC /* QRAPPopUpErrorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB0AFE3AC2B8524C098705 /* QRAPPopUpErrorVC.swift */; };
+		1EEB0BCB1C1FEA230860879E /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB026D1898173C2CF83030 /* UIApplicationExtension.swift */; };
+		1EEB0E4C2BD274C2C2D4F9AD /* QRErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB09FC4F5040AC88115D94 /* QRErrorResponse.swift */; };
 		2DD451678073CC79784E0185 /* QRLottieAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD45789DA501A76E487552D /* QRLottieAnimationView.swift */; };
 		2DD4519D4E71347624F87352 /* QRLottieAnimationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DD453CBE14CBDAC068DE88E /* QRLottieAnimationView.xib */; };
 		2DD4528A0C5C194727F9BB20 /* QRLoadingStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DD45E77B2312C10652CD123 /* QRLoadingStateView.xib */; };
@@ -177,12 +182,12 @@
 		2DD45B5E17543744002406DF /* QRLoadingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD450093199B934814F870C /* QRLoadingStateView.swift */; };
 		2DD45B8FF8144A318BEBCA27 /* APCustomKeyboardAtom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DD453CEC9F8A2C769BB784E /* APCustomKeyboardAtom.xib */; };
 		2DD45DC8B0BC79676C2B41BD /* loadingLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 2DD45D194BA55320B733FCAA /* loadingLottie.json */; };
+		E3289C1D2C360D4A9BB27198 /* Pods_qris_sdk_new_1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52045D6131BEF7EB30E23DB3 /* Pods_qris_sdk_new_1.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0D1A805A27E1C185007B5984 /* qris-sdk-new-1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "qris-sdk-new-1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D1A805D27E1C185007B5984 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0D1A805F27E1C185007B5984 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0D1A806127E1C185007B5984 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0D1A806427E1C185007B5984 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0D1A806627E1C186007B5984 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -339,6 +344,13 @@
 		0D1A815C27E1C1F3007B5984 /* BarlowExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BarlowExtraBold.ttf; sourceTree = "<group>"; };
 		0D1A815D27E1C1F3007B5984 /* BarlowThin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BarlowThin.ttf; sourceTree = "<group>"; };
 		0D1A815F27E1C1F3007B5984 /* CacheAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheAuthentication.swift; sourceTree = "<group>"; };
+		1EEB026D1898173C2CF83030 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
+		1EEB081A913291C3E91935F2 /* QRPaylaterMauCashModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRPaylaterMauCashModel.swift; sourceTree = "<group>"; };
+		1EEB08AB829A83C5228F8E92 /* QRCodeResp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeResp.swift; sourceTree = "<group>"; };
+		1EEB09EDDFFC9529F521F8C5 /* QRAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRAlert.swift; sourceTree = "<group>"; };
+		1EEB09FC4F5040AC88115D94 /* QRErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRErrorResponse.swift; sourceTree = "<group>"; };
+		1EEB0AFE3AC2B8524C098705 /* QRAPPopUpErrorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRAPPopUpErrorVC.swift; sourceTree = "<group>"; };
+		1EEB0AFF76CC387CA11ABCB3 /* QRAPPopUpErrorVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRAPPopUpErrorVC.xib; sourceTree = "<group>"; };
 		2DD450093199B934814F870C /* QRLoadingStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRLoadingStateView.swift; sourceTree = "<group>"; };
 		2DD453CBE14CBDAC068DE88E /* QRLottieAnimationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRLottieAnimationView.xib; sourceTree = "<group>"; };
 		2DD453CEC9F8A2C769BB784E /* APCustomKeyboardAtom.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APCustomKeyboardAtom.xib; sourceTree = "<group>"; };
@@ -351,9 +363,9 @@
 		2DD45E77B2312C10652CD123 /* QRLoadingStateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRLoadingStateView.xib; sourceTree = "<group>"; };
 		2DD45F0EA06B86A67CF5EB49 /* APImageKeyboardAtom.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APImageKeyboardAtom.xib; sourceTree = "<group>"; };
 		2DD45F3226C5A77DE682B7CC /* successLottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = successLottie.json; sourceTree = "<group>"; };
-		36A0CC501C97C334219F0712 /* Pods_qris_sdk_new_1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_qris_sdk_new_1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E18722852D98D932BD4A68D /* Pods-qris-sdk-new-1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qris-sdk-new-1.debug.xcconfig"; path = "Target Support Files/Pods-qris-sdk-new-1/Pods-qris-sdk-new-1.debug.xcconfig"; sourceTree = "<group>"; };
-		D7711D780B1CCF14A5E2A650 /* Pods-qris-sdk-new-1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qris-sdk-new-1.release.xcconfig"; path = "Target Support Files/Pods-qris-sdk-new-1/Pods-qris-sdk-new-1.release.xcconfig"; sourceTree = "<group>"; };
+		52045D6131BEF7EB30E23DB3 /* Pods_qris_sdk_new_1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_qris_sdk_new_1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CE849ABFC3961C687FD47A8 /* Pods-qris-sdk-new-1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qris-sdk-new-1.debug.xcconfig"; path = "Target Support Files/Pods-qris-sdk-new-1/Pods-qris-sdk-new-1.debug.xcconfig"; sourceTree = "<group>"; };
+		FF1D81AE49AB82A1DDE58553 /* Pods-qris-sdk-new-1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-qris-sdk-new-1.release.xcconfig"; path = "Target Support Files/Pods-qris-sdk-new-1/Pods-qris-sdk-new-1.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -361,7 +373,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12A055A2F4B8898777F63436 /* Pods_qris_sdk_new_1.framework in Frameworks */,
+				E3289C1D2C360D4A9BB27198 /* Pods_qris_sdk_new_1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,8 +385,8 @@
 			children = (
 				0D1A805C27E1C185007B5984 /* qris-sdk-new-1 */,
 				0D1A805B27E1C185007B5984 /* Products */,
-				647CA8BB598F19681254BAA5 /* Pods */,
-				9A722EBD71C3BB73035C2406 /* Frameworks */,
+				0E83C54848D883B3BB55647F /* Pods */,
+				E9DECB3F5F3D60AAB1598FBF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -391,7 +403,6 @@
 			children = (
 				0D1A807127E1C1F2007B5984 /* QR */,
 				0D1A805D27E1C185007B5984 /* AppDelegate.swift */,
-				0D1A805F27E1C185007B5984 /* SceneDelegate.swift */,
 				0D1A806127E1C185007B5984 /* ViewController.swift */,
 				0D1A806327E1C185007B5984 /* Main.storyboard */,
 				0D1A806627E1C186007B5984 /* Assets.xcassets */,
@@ -450,6 +461,7 @@
 				0D1A80D827E1C1F2007B5984 /* QRCameraControlView */,
 				2DD45F4E294EC31037A6ACE4 /* QRLottieView */,
 				2DD453523B94319B995DD8B9 /* QRLoadingStateView */,
+				1EEB042C5B761C4C2392C694 /* QRErrorPopUp */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -978,6 +990,7 @@
 			isa = PBXGroup;
 			children = (
 				0D1A811827E1C1F3007B5984 /* QRAPBillPaymentsModel.swift */,
+				1EEB081A913291C3E91935F2 /* QRPaylaterMauCashModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -995,6 +1008,7 @@
 				0D1A814627E1C1F3007B5984 /* QrNewRouter */,
 				0D1A814927E1C1F3007B5984 /* Font */,
 				0D1A815E27E1C1F3007B5984 /* AuthenticationQR */,
+				1EEB0D8CE0624938104C3B8B /* QRAlert */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1057,6 +1071,8 @@
 			isa = PBXGroup;
 			children = (
 				0D1A813027E1C1F3007B5984 /* QRGenericResult.swift */,
+				1EEB08AB829A83C5228F8E92 /* QRCodeResp.swift */,
+				1EEB09FC4F5040AC88115D94 /* QRErrorResponse.swift */,
 			);
 			path = QRResponse;
 			sourceTree = "<group>";
@@ -1075,6 +1091,7 @@
 				0D1A813A27E1C1F3007B5984 /* StringExtension.swift */,
 				0D1A813B27E1C1F3007B5984 /* DictionaryExtension.swift */,
 				0D1A813C27E1C1F3007B5984 /* DateFormatterExtension.swift */,
+				1EEB026D1898173C2CF83030 /* UIApplicationExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1162,6 +1179,32 @@
 			path = AuthenticationQR;
 			sourceTree = "<group>";
 		};
+		0E83C54848D883B3BB55647F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8CE849ABFC3961C687FD47A8 /* Pods-qris-sdk-new-1.debug.xcconfig */,
+				FF1D81AE49AB82A1DDE58553 /* Pods-qris-sdk-new-1.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		1EEB042C5B761C4C2392C694 /* QRErrorPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				1EEB0AFF76CC387CA11ABCB3 /* QRAPPopUpErrorVC.xib */,
+				1EEB0AFE3AC2B8524C098705 /* QRAPPopUpErrorVC.swift */,
+			);
+			path = QRErrorPopUp;
+			sourceTree = "<group>";
+		};
+		1EEB0D8CE0624938104C3B8B /* QRAlert */ = {
+			isa = PBXGroup;
+			children = (
+				1EEB09EDDFFC9529F521F8C5 /* QRAlert.swift */,
+			);
+			path = QRAlert;
+			sourceTree = "<group>";
+		};
 		2DD451D33DF5FE506F77A0E3 /* Lottie Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -1203,20 +1246,10 @@
 			path = QRLottieView;
 			sourceTree = "<group>";
 		};
-		647CA8BB598F19681254BAA5 /* Pods */ = {
+		E9DECB3F5F3D60AAB1598FBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7E18722852D98D932BD4A68D /* Pods-qris-sdk-new-1.debug.xcconfig */,
-				D7711D780B1CCF14A5E2A650 /* Pods-qris-sdk-new-1.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		9A722EBD71C3BB73035C2406 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				36A0CC501C97C334219F0712 /* Pods_qris_sdk_new_1.framework */,
+				52045D6131BEF7EB30E23DB3 /* Pods_qris_sdk_new_1.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1228,11 +1261,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0D1A806E27E1C186007B5984 /* Build configuration list for PBXNativeTarget "qris-sdk-new-1" */;
 			buildPhases = (
-				BD41D353539DBA2E276A7925 /* [CP] Check Pods Manifest.lock */,
+				7ECEDADEDF56F945F5119F0C /* [CP] Check Pods Manifest.lock */,
 				0D1A805627E1C185007B5984 /* Sources */,
 				0D1A805727E1C185007B5984 /* Frameworks */,
 				0D1A805827E1C185007B5984 /* Resources */,
-				10212743AE8717E0401559A5 /* [CP] Embed Pods Frameworks */,
+				398F08BEB5CF52560BE72E8E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1344,13 +1377,14 @@
 				2DD45869456F8157E321D18B /* APImageKeyboardAtom.xib in Resources */,
 				2DD45B8FF8144A318BEBCA27 /* APCustomKeyboardAtom.xib in Resources */,
 				2DD4528A0C5C194727F9BB20 /* QRLoadingStateView.xib in Resources */,
+				1EEB093858C59FBBE3264167 /* QRAPPopUpErrorVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		10212743AE8717E0401559A5 /* [CP] Embed Pods Frameworks */ = {
+		398F08BEB5CF52560BE72E8E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1367,7 +1401,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-qris-sdk-new-1/Pods-qris-sdk-new-1-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BD41D353539DBA2E276A7925 /* [CP] Check Pods Manifest.lock */ = {
+		7ECEDADEDF56F945F5119F0C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1480,7 +1514,6 @@
 				0D1A819527E1C1F3007B5984 /* QRTransactionDetailTopTVCell.swift in Sources */,
 				0D1A817D27E1C1F3007B5984 /* QRPLMCTenorLoanTrxTVCell.swift in Sources */,
 				0D1A81B627E1C1F3007B5984 /* QRGetDetailTransaksiDtoViewData.swift in Sources */,
-				0D1A806027E1C185007B5984 /* SceneDelegate.swift in Sources */,
 				0D1A816D27E1C1F3007B5984 /* QRDetailPaymentTVCellAstrapay.swift in Sources */,
 				0D1A81AF27E1C1F3007B5984 /* QRPLMaucashQrisLoanTrxVC.swift in Sources */,
 				0D1A819E27E1C1F3007B5984 /* QRPopUpMessage.swift in Sources */,
@@ -1502,6 +1535,12 @@
 				2DD4572697857060DEA191B6 /* QRAPImageKeyboardAtom.swift in Sources */,
 				2DD452B0022883FF20648F82 /* QRAPCustomKeyboardAtom.swift in Sources */,
 				2DD45B5E17543744002406DF /* QRLoadingStateView.swift in Sources */,
+				1EEB02D0B97CB07FCAA3E47F /* QRAlert.swift in Sources */,
+				1EEB0A406BC9BE7F77D33BEC /* QRAPPopUpErrorVC.swift in Sources */,
+				1EEB01B272B4243786A35370 /* QRCodeResp.swift in Sources */,
+				1EEB034A88EE62FC9C851640 /* QRPaylaterMauCashModel.swift in Sources */,
+				1EEB0BCB1C1FEA230860879E /* UIApplicationExtension.swift in Sources */,
+				1EEB0E4C2BD274C2C2D4F9AD /* QRErrorResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1645,7 +1684,7 @@
 		};
 		0D1A806F27E1C186007B5984 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7E18722852D98D932BD4A68D /* Pods-qris-sdk-new-1.debug.xcconfig */;
+			baseConfigurationReference = 8CE849ABFC3961C687FD47A8 /* Pods-qris-sdk-new-1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1659,6 +1698,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1674,7 +1714,7 @@
 		};
 		0D1A807027E1C186007B5984 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7711D780B1CCF14A5E2A650 /* Pods-qris-sdk-new-1.release.xcconfig */;
+			baseConfigurationReference = FF1D81AE49AB82A1DDE58553 /* Pods-qris-sdk-new-1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1688,6 +1728,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

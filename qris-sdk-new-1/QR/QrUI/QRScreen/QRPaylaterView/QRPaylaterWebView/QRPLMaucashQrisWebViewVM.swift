@@ -61,8 +61,9 @@ class QRPLMaucashQrisWebViewVM {
     var resourceType: QRPLMaucashQrisWebViewVMType? = .web(url: url)
     
     func setupUserData(){
-        let me = Prefs.getUser()!
-        self.mobile = me.profile?.phoneNumber ?? ""
+//        let me = Prefs.getUser()!
+        // ini dari scan qr inquiry aja
+        self.mobile = "085770442298" ?? ""
     }
 
 

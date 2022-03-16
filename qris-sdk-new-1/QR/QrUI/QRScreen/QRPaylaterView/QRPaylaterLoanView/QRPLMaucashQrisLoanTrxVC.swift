@@ -180,7 +180,7 @@ extension QRPLMaucashQrisLoanTrxVC : QRPLMaucashQrisLoanTrxVMProtocol {
     func didFailureQrisTransactionsPLMC(err: String) {
         DispatchQueue.main.async {
             self.stateLoadingQR(state: .dismiss)
-            Alert.show(title: .errorTitle, msg: .errorMsg)
+            QRAlert.show(title: .errorTitle, msg: .errorMsg)
             self.actionButton.setAtomic(type: .disabled, title: "BAYAR")
         }
     }
@@ -188,7 +188,7 @@ extension QRPLMaucashQrisLoanTrxVC : QRPLMaucashQrisLoanTrxVMProtocol {
     func didErrorQrisTransactionsPLMC() {
         DispatchQueue.main.async {
             self.stateLoadingQR(state: .dismiss)
-            Alert.show(title: .errorTitle, msg: .errorMsg)
+            QRAlert.show(title: .errorTitle, msg: .errorMsg)
             self.actionButton.setAtomic(type: .disabled, title: "BAYAR")
         }
     }
@@ -224,7 +224,7 @@ extension QRPLMaucashQrisLoanTrxVC : QRPLMaucashQrisLoanTrxVMProtocol {
     func didErrorTenorTrxQris() {
         DispatchQueue.main.async {
             self.stateLoadingQR(state: .dismiss)
-            Alert.show(title: .errorTitle, msg: .errorMsg)
+            QRAlert.show(title: .errorTitle, msg: .errorMsg)
             self.actionButton.setAtomic(type: .disabled, title: "BAYAR")
         }
     }
@@ -424,7 +424,7 @@ extension QRPLMaucashQrisLoanTrxVC : QRPLMaucashQrisLoanTrxVMProtocol {
 
 extension QRPLMaucashQrisLoanTrxVC : QRPopUpMessageProtocol {
     func didPressMainButton(){
-        self.dismissPopUpBottomView()
+        self.QRdismissPopUpBottomView()
     }
 }
 
@@ -485,6 +485,6 @@ extension QRPLMaucashQrisLoanTrxVC: QRPopUpProtocol {
 
     func didActionButtonPressed(){
         self.dismissPopUpViewQR()
-        AppState.switchToHome(completion: nil)
+//        AppState.switchToHome(completion: nil)
     }
 }

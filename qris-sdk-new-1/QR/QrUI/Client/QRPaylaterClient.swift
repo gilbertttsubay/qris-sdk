@@ -67,7 +67,7 @@ public struct QRPaylaterClient {
     }
 
     struct ClientProperty{
-        static let AUTH_TOKEN = Prefs.getAuthNewAccessToken()
+        static let AUTH_TOKEN = "Prefs.getAuthNewAccessToken()"
     }
 
     var urlTenorTrxQrisTPLMC : String = "\(QRConstant.baseUrlMobileGatewaySIT)/paylater-service/partners/maucash/tenor?merchantCode="
@@ -75,7 +75,7 @@ public struct QRPaylaterClient {
 
     public func constructHeaderGeneral() -> HTTPHeaders {
         let header: HTTPHeaders = [
-            QRConstant.HEADER_X_APPLICATION_TOKEN: "\(Prefs.getUser()!.accessToken)", //hardcode aja dulu nanti
+//            QRConstant.HEADER_X_APPLICATION_TOKEN: "\(Prefs.getUser()!.accessToken)", //hardcode aja dulu nanti
             "Authorization": "Bearer \(ClientProperty.AUTH_TOKEN)",
             "Content-Type": "application/json"
         ]

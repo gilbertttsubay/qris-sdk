@@ -479,6 +479,21 @@ extension UIViewController {
         self.QRShowPopupErrorMessage(message: "Terjadi gangguan pada fitur ini.\nCoba lagi ya nanti.")
     }
 
+    func QRdismissPopUpBottomView(){
+        if let viewWithTag = self.view.viewWithTag(UIViewController.QRtagSubview) {
+            UIView.animate(withDuration: 0.20, delay: 0, options: [.allowUserInteraction], animations: {
+                viewWithTag.frame = CGRect(x: 0, y: self.view.frame.height , width: viewWithTag.frame.width, height: viewWithTag.frame.height)
+            }, completion:  {
+                finished in
+                print(finished)
+                if finished {
+                    viewWithTag.isUserInteractionEnabled = true
+                    self.removePlaceHolderView()
+                    viewWithTag.removeFromSuperview()
+                }
+            })
+        }
+    }
     func QRDismissPopupStateLoading() {
         if let viewWithTag = UIApplication.shared.windows.first?.viewWithTag(UIViewController.QRtagContainerLoading) {
             viewWithTag.removeFromSuperview()
@@ -498,7 +513,7 @@ extension UIViewController {
             bgView.alpha = 0.4
             self.view.addSubview(bgView)
 
-            let vc = APPopUpErrorVC()
+            let vc = QRAPPopUpErrorVC()
             let vTop = self.navigationController?.topViewController
             vc.onDismissTapped = { [weak self] (isTrue, value) in
                 guard self != nil else { return }

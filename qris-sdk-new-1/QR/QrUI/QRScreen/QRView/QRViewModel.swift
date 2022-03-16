@@ -19,9 +19,9 @@ class QRViewModel {
     
 //    private var qrViewController = QRViewController()
     private let qrClient = QRClient()
-    var userBalanceAstrapay: Int {
-        return Int(Prefs.getUser()?.balance ?? 0)
-    }
+//    var userBalanceAstrapay: Int {
+//        return Int(Prefs.getUser()?.balance ?? 0)
+//    }
     var delegate: QRViewModelProtocol?
 
 

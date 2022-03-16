@@ -5,13 +5,13 @@
 
 import Foundation
 
-var baseUrlMobileGatewayQr: String {
-    switch BuildModeEndpoint.buildMode {
-    case .cygnus :
-        return "https://frontend-sit.astrapay.com"
-    case .orion :
-        return "https://frontend-sit.astrapay.com"
-    case .vega :
-        return "https://frontend-sit.astrapay.com"
-    }
-}
+//var baseUrlMobileGatewayQr: String {
+//    switch BuildModeEndpoint.buildMode {
+//    case .cygnus :
+//        return "https://frontend-sit.astrapay.com"
+//    case .orion :
+//        return "https://frontend-sit.astrapay.com"
+//    case .vega :
+//        return "https://frontend-sit.astrapay.com"
+//    }
+//}

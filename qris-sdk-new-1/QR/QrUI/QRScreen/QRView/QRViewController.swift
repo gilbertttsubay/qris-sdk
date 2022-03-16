@@ -216,7 +216,7 @@ extension QRViewController: QRViewModelProtocol {
         self.stateLoadingQR(state: .dismiss)
 
         var qrInquiryDtoViewData = QRInquiryDtoViewData(qrInquiryResponse: qrInquiryResponse)
-        self.qrNewRouter?.navigateToTransactionDetailAdjustAmountAllowedFalse(qrInquiryDtoViewData: qrInquiryDtoViewData, userBalanceAstrapay: self.vm.userBalanceAstrapay)
+        self.qrNewRouter?.navigateToTransactionDetailAdjustAmountAllowedFalse(qrInquiryDtoViewData: qrInquiryDtoViewData)
     }
 
     func didRetrieveQRFailed(){

@@ -15,25 +15,29 @@ public struct QRClient {
 
 
     var userId = "1999"
-    var urlBaseQrisService: String = ""
+    var urlBaseQrisService: String = QRConstant.QRIS_SIT_API
 
     struct ClientProperty{
-        static let AUTH_TOKEN = Prefs.getAuthNewAccessToken()
+
+        //MARK: Delegate
+        static let AUTH_TOKEN = "Prefs.getAuthNewAccessToken()"
     }
 
     init(){
-        switch (BuildModeEndpoint.buildMode){
-        case .cygnus:
-                urlBaseQrisService = QRConstant.QRIS_SIT_API
-            break
-        case .vega:
-            urlBaseQrisService = QRConstant.QRIS_UAT_API
-            break
-        case .orion:
-            urlBaseQrisService = "https://frontend-.astrapay.com/qris-service"
-            break
 
-        }
+        //MARK: ini harus di delegate ke luar
+//        switch (BuildModeEndpoint.buildMode){
+//        case .cygnus:
+//                urlBaseQrisService = QRConstant.QRIS_SIT_API
+//            break
+//        case .vega:
+//            urlBaseQrisService = QRConstant.QRIS_UAT_API
+//            break
+//        case .orion:
+//            urlBaseQrisService = "https://frontend-.astrapay.com/qris-service"
+//            break
+//
+//        }
 
     }
 

@@ -50,7 +50,6 @@ class QRInputAmountViewController: UIViewController {
         setupQRRouter()
         setupActions()
         setupProtocol()
-        setupUserBalance()
     }
     // variabel dari kelas lain
     var qrNewRouter: QRNewRouter?
@@ -72,9 +71,6 @@ extension QRInputAmountViewController {
         self.viewModel?.delegate = self
     }
 
-    func setupUserBalance(){
-        self.viewModel?.userBalanceAstrapay = Int(Prefs.getUser()?.balance ?? 0)
-    }
 }
 
 extension QRInputAmountViewController {

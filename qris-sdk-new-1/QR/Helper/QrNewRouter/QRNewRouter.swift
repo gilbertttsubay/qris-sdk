@@ -53,7 +53,7 @@ class QRNewRouter {
         }
     }
 
-    func navigateToTransactionDetailAdjustAmountAllowedFalse(qrInquiryDtoViewData: QRInquiryDtoViewData, userBalanceAstrapay: Int){
+    func navigateToTransactionDetailAdjustAmountAllowedFalse(qrInquiryDtoViewData: QRInquiryDtoViewData, userBalanceAstrapay: Int = 0){
         DispatchQueue.main.async {
             guard let qrTransactionVC = UIStoryboard(name:QRConstant.qrStoryBoardName, bundle:nil).instantiateViewController(withIdentifier: QRNewTransactionFlowViewController.identifier) as? QRNewTransactionFlowViewController else {
                 return

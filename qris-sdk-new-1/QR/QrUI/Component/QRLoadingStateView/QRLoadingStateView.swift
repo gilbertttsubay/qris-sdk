@@ -22,15 +22,15 @@ class QRLoadingStateView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        xibSetup(nibName: QRLoadingStateView.nibName)
+        xibSetupQR(nibName: QRLoadingStateView.nibName)
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        xibSetup(nibName: QRLoadingStateView.nibName)
+        xibSetupQR(nibName: QRLoadingStateView.nibName)
     }
 
     override func awakeFromNib() {
-        xibSetup(nibName: QRLoadingStateView.nibName)
+        xibSetupQR(nibName: QRLoadingStateView.nibName)
     }
 }

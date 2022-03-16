@@ -21,7 +21,7 @@ protocol QRPLMCTenorLoanTrxTVCellProtocol {
 }
 
 struct QRPLMCTenorLoanTrxTVCellPayload {
-    var arraySubTenor : [EligibleCheckResp] = []
+    var arraySubTenor : [QREligibleCheckResp] = []
 }
 
 struct QRPLMCQrisTenorLoanTrxTVCellPayload {
@@ -40,7 +40,7 @@ class QRPLMCTenorLoanTrxTVCell: UITableViewCell {
     static let identifier = "QRPLMCTenorLoanTrxTVCellIdentifier"
     
     var plmcSubTenorLoanTVCell = QRPLMCSubTenorLoanTVCell()
-    var arraySubTenor : [EligibleCheckResp] = []
+    var arraySubTenor : [QREligibleCheckResp] = []
     var aarTenorLoanTrx : [QRTenorTrx] = []
     var delegate : QRPLMCTenorLoanTrxTVCellProtocol?
     var tenorCheck : String = ""

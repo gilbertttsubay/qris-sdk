@@ -44,6 +44,8 @@ class QRPopUpMessage: UIView {
         static let popUpHeight : CGFloat = 350
         static let constantMoreThanIphone7 : CGFloat = 120
         static let constantIphoneSe : CGFloat = 80
+        static let alertDuplicateEmail: String = "Email yang kamu masukkan sudah terdaftar. Masukkan email lain ya!"
+
     }
     static let identifier = VCProperty.identifier
     static let nibName = VCProperty.nibName
@@ -54,7 +56,6 @@ class QRPopUpMessage: UIView {
     static let popUpHeight : CGFloat = VCProperty.popUpHeight
     let constantMoreThanIphone7 : CGFloat = VCProperty.constantMoreThanIphone7
     let constantIphoneSe : CGFloat = VCProperty.constantIphoneSe
-    static let alertDuplicateEmail: String = "Email yang kamu masukkan sudah terdaftar. Masukkan email lain ya!"
 
     override class func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
@@ -176,7 +177,7 @@ extension QRPopUpMessage{
     func setupProductNotFound(){
         self.setupView()
         self.imgPopUP.image = UIImage(named: "illustration_rejected")
-        self.lblPopUp.text = AlertInfo.productNotFound.rawValue
+        self.lblPopUp.text = QRAlertInfo.productNotFound.rawValue
         self.firstBtnPopUp.setAtomic(type: .filled, title: "OK", messageError: "")
         self.containerView.roundedTopMessageQR(isFullScreen: true)
         self.firstBtnPopUp.coreButton.addTapGestureRecognizerQR(action: {
@@ -198,7 +199,7 @@ extension QRPopUpMessage{
     func setupConnectionTimeOut(){
         self.setupView()
         self.imgPopUP.image = UIImage(named: "illustration_rejected")
-        self.lblPopUp.text = AlertInfo.transactionTryAgain.rawValue
+        self.lblPopUp.text = QRAlertInfo.transactionTryAgain.rawValue
         self.firstBtnPopUp.setAtomic(type: .filled, title: "OK", messageError: "")
         self.containerView.roundedTopMessageQR(isFullScreen: true)
         self.firstBtnPopUp.coreButton.addTapGestureRecognizerQR(action: {
@@ -214,7 +215,7 @@ extension QRPopUpMessage{
         DispatchQueue.main.async {
             self.setupView(isWithNavigationBar: false)
             self.imgPopUP.image = UIImage(named: "illustration_pin")
-            self.lblPopUp.text = AlertInfo.changeInfoTemporaryPin.rawValue
+            self.lblPopUp.text = QRAlertInfo.changeInfoTemporaryPin.rawValue
             self.firstBtnPopUp.setAtomic(type: .filled, title: "OK", messageError: "")
             self.containerView.roundedTopMessageQR(isFullScreen: true)
             self.firstBtnPopUp.coreButton.addTapGestureRecognizerQR(action: {
@@ -240,7 +241,7 @@ extension QRPopUpMessage{
         DispatchQueue.main.async {
             self.setupView(isWithNavigationBar: false)
             self.imgPopUP.image = UIImage(named: "illustration_success")
-            self.lblPopUp.text = AlertInfo.changeNameSuccesPopUP.rawValue
+            self.lblPopUp.text = QRAlertInfo.changeNameSuccesPopUP.rawValue
             self.firstBtnPopUp.setAtomic(type: .filled, title: "OK", messageError: "")
             self.containerView.roundedTopMessageQR(isFullScreen: true)
             self.firstBtnPopUp.coreButton.addTapGestureRecognizerQR(action: {
@@ -253,7 +254,7 @@ extension QRPopUpMessage{
         DispatchQueue.main.async {
             self.setupView(isWithNavigationBar: false)
             self.imgPopUP.image = UIImage(named: "illustration_failed")
-            self.lblPopUp.text = AlertInfo.changeNameUpgradeProses.rawValue
+            self.lblPopUp.text = QRAlertInfo.changeNameUpgradeProses.rawValue
             self.firstBtnPopUp.setAtomic(type: .filled, title: "OK", messageError: "")
             self.containerView.roundedTopMessageQR(isFullScreen: true)
             self.firstBtnPopUp.coreButton.addTapGestureRecognizerQR(action: {
@@ -266,7 +267,7 @@ extension QRPopUpMessage{
             DispatchQueue.main.async {
                 self.setupView(isWithNavigationBar: false)
                 self.imgPopUP.image = UIImage(named: "illustration_failed")
-                self.lblPopUp.text = AlertInfo.preferedPrior.rawValue
+                self.lblPopUp.text = QRAlertInfo.preferedPrior.rawValue
                 self.firstBtnPopUp.setAtomic(type: .filled, title: "OK", messageError: "")
                 self.containerView.roundedTopMessageQR(isFullScreen: true)
                 self.firstBtnPopUp.coreButton.addTapGestureRecognizerQR(action: {
@@ -279,7 +280,7 @@ extension QRPopUpMessage{
         DispatchQueue.main.async {
             self.setupView(isWithNavigationBar: false)
             self.imgPopUP.image = UIImage(named: "illustration_success")
-            self.lblPopUp.text = AlertInfo.changeEmailSuccesPopUP.rawValue
+            self.lblPopUp.text = QRAlertInfo.changeEmailSuccesPopUP.rawValue
             self.firstBtnPopUp.setAtomic(type: .filled, title: "OK", messageError: "")
             self.containerView.roundedTopMessageQR(isFullScreen: true)
             self.firstBtnPopUp.coreButton.addTapGestureRecognizerQR(action: {
@@ -292,7 +293,7 @@ extension QRPopUpMessage{
         DispatchQueue.main.async {
             self.setupView(isWithNavigationBar: false)
             self.imgPopUP.image = UIImage(named: "illustration_failed")
-            self.lblPopUp.text = SettingNewEmailVC.VCProperty.alertDuplicateEmail
+            self.lblPopUp.text = VCProperty.alertDuplicateEmail
             self.firstBtnPopUp.setAtomic(type: .filled, title: "OK", messageError: "")
             self.containerView.roundedTopMessageQR(isFullScreen: true)
             self.firstBtnPopUp.coreButton.addTapGestureRecognizerQR(action: {
@@ -305,7 +306,7 @@ extension QRPopUpMessage{
         DispatchQueue.main.async {
             self.setupView(isWithNavigationBar: false)
             self.imgPopUP.image = UIImage(named: "ic_changepin_success")
-            self.lblPopUp.text = AlertInfo.changePinSuccess.rawValue
+            self.lblPopUp.text = QRAlertInfo.changePinSuccess.rawValue
             self.firstBtnPopUp.setAtomic(type: .filled, title: "OK", messageError: "")
             self.containerView.roundedTopMessageQR(isFullScreen: true)
             self.firstBtnPopUp.coreButton.addTapGestureRecognizerQR(action: {
@@ -318,7 +319,7 @@ extension QRPopUpMessage{
         DispatchQueue.main.async {
             self.setupView(isWithNavigationBar: false)
             self.imgPopUP.image = UIImage(named: "img_success_klaim_voucher")
-            self.lblPopUp.text = AlertInfo.successKlaimVoucher.rawValue
+            self.lblPopUp.text = QRAlertInfo.successKlaimVoucher.rawValue
             self.firstBtnPopUp.setAtomic(type: .filled, title: "OK", messageError: "")
             self.containerView.roundedTopMessageQR(isFullScreen: true)
             self.firstBtnPopUp.coreButton.addTapGestureRecognizerQR(action: {
@@ -331,7 +332,7 @@ extension QRPopUpMessage{
         DispatchQueue.main.async {
             self.setupView(isWithNavigationBar: false)
             self.imgPopUP.image = UIImage(named: "img_question")
-            self.lblPopUp.text = AlertInfo.failureKlaimVoucher.rawValue
+            self.lblPopUp.text = QRAlertInfo.failureKlaimVoucher.rawValue
             self.firstBtnPopUp.setAtomic(type: .filled, title: "OK", messageError: "")
             self.containerView.roundedTopMessageQR(isFullScreen: true)
             self.firstBtnPopUp.coreButton.addTapGestureRecognizerQR(action: {
@@ -344,7 +345,7 @@ extension QRPopUpMessage{
         DispatchQueue.main.async {
             self.setupView(isWithNavigationBar: false)
             self.imgPopUP.image = UIImage(named: "img_voucher_loss_connection")
-            self.lblPopUp.text = AlertInfo.errorConnection.rawValue
+            self.lblPopUp.text = QRAlertInfo.errorConnection.rawValue
             self.firstBtnPopUp.setAtomic(type: .filled, title: "OK", messageError: "")
             self.containerView.roundedTopMessageQR(isFullScreen: true)
             self.firstBtnPopUp.coreButton.addTapGestureRecognizerQR(action: {
@@ -357,7 +358,7 @@ extension QRPopUpMessage{
         DispatchQueue.main.async {
             self.setupView(isWithNavigationBar: false)
             self.imgPopUP.image = UIImage(named: "illustration_bank_delete")
-            self.lblPopUp.text = AlertInfo.deleteBankAccount.rawValue
+            self.lblPopUp.text = QRAlertInfo.deleteBankAccount.rawValue
             self.firstBtnPopUp.setAtomic(type: .filled, title: lblFirstBtn, messageError: "")
             self.secondBtnPopUp.setAtomic(type: .nudeWhite, title: lblSecondBtn, messageError: "")
             self.containerView.roundedTopMessageQR(isFullScreen: true)
@@ -372,7 +373,7 @@ extension QRPopUpMessage{
         DispatchQueue.main.async {
             self.setupView(isWithNavigationBar: false)
             self.imgPopUP.image = UIImage(named: "illustration_rejected")
-            self.lblPopUp.text = AlertInfo.existbank.rawValue
+            self.lblPopUp.text = QRAlertInfo.existbank.rawValue
             self.firstBtnPopUp.setAtomic(type: .filled, title: "OK", messageError: "")
             self.containerView.roundedTopMessageQR(isFullScreen: true)
             self.firstBtnPopUp.coreButton.addTapGestureRecognizerQR(action: {
@@ -385,7 +386,7 @@ extension QRPopUpMessage{
         DispatchQueue.main.async {
             self.setupView(isWithNavigationBar: false)
             self.imgPopUP.image = UIImage(named: "ic_forgotpin_success")
-            self.lblPopUp.text = AlertInfo.removeBankSuccess.rawValue
+            self.lblPopUp.text = QRAlertInfo.removeBankSuccess.rawValue
             self.firstBtnPopUp.setAtomic(type: .filled, title: "OK", messageError: "")
             self.containerView.roundedTopMessageQR(isFullScreen: true)
             self.firstBtnPopUp.coreButton.addTapGestureRecognizerQR(action: {

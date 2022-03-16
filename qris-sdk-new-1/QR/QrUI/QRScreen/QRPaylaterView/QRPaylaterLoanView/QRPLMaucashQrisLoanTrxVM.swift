@@ -143,8 +143,10 @@ class QRPLMaucashQrisLoanTrxVM {
     }
 
     func setupUserData(){
-        let me = Prefs.getUser()!
-        self.mobile = me.profile?.phoneNumber ?? ""
+//        let me = Prefs.getUser()!
+
+        //ini phone number bisa dari scan qr aja
+        self.mobile = "085770442298" ?? ""
         self.amount = qrPlmcQrisLoanTrxPayload?.amount ?? "0"
         self.itemType = qrPlmcQrisLoanTrxPayload?.itemType ?? ""
         self.itemName = qrPlmcQrisLoanTrxPayload?.itemName ?? ""
