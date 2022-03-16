@@ -201,7 +201,7 @@ class QRPopUpOTP: UIView {
         self.constraintResendOTPCenterX.constant = self.constResendOTPXWithTimer
         self.btnResendOTP.isUserInteractionEnabled = false
         self.btnResendOTP.titleLabel?.font = UIFont.setupFont(size: 12, fontType: .interBold)
-        self.btnResendOTP.setTitleColor(UIColor(string: "#b2b2b2"), for: .normal)
+        self.btnResendOTP.setTitleColor(UIColor(hexString: "#b2b2b2"), for: .normal)
     }
     
     func enableButtonResend(){

@@ -237,7 +237,7 @@ class QRLKPINView: UIControl, UIKeyInput {
             let neededRadius = min(self.bounds.width, self.bounds.height)
             self.layer.cornerRadius = neededRadius / 2
             self.layer.masksToBounds = true
-            self.layer.borderWidth = LKPINView.borderWidth
+            self.layer.borderWidth = QRLKPINView.borderWidth
             
             if hasText {
                 self.layer.borderColor = bgBorderColor.cgColor

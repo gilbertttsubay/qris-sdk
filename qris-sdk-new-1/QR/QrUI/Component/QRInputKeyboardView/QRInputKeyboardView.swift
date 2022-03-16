@@ -21,18 +21,18 @@ protocol QRInputKeyboardViewProtocol {
 @IBDesignable
 class QRInputKeyboardView: UIView {
  
-    @IBOutlet weak var keyboardOne: APCustomKeyboardAtom!
-    @IBOutlet weak var keyboardTwo: APCustomKeyboardAtom!
-    @IBOutlet weak var keyboardThree: APCustomKeyboardAtom!
-    @IBOutlet weak var keyboardFour: APCustomKeyboardAtom!
-    @IBOutlet weak var keyboardFive: APCustomKeyboardAtom!
-    @IBOutlet weak var keyboardSix: APCustomKeyboardAtom!
-    @IBOutlet weak var keyboardSeven: APCustomKeyboardAtom!
-    @IBOutlet weak var keyboardEight: APCustomKeyboardAtom!
-    @IBOutlet weak var keyboardNine: APCustomKeyboardAtom!
-    @IBOutlet weak var keyboardZeroTriple: APCustomKeyboardAtom!
-    @IBOutlet weak var keyboardZero: APCustomKeyboardAtom!
-    @IBOutlet weak var keyboardRemove: APImageKeyboardAtom!
+    @IBOutlet weak var keyboardOne: QRAPCustomKeyboardAtom!
+    @IBOutlet weak var keyboardTwo: QRAPCustomKeyboardAtom!
+    @IBOutlet weak var keyboardThree: QRAPCustomKeyboardAtom!
+    @IBOutlet weak var keyboardFour: QRAPCustomKeyboardAtom!
+    @IBOutlet weak var keyboardFive: QRAPCustomKeyboardAtom!
+    @IBOutlet weak var keyboardSix: QRAPCustomKeyboardAtom!
+    @IBOutlet weak var keyboardSeven: QRAPCustomKeyboardAtom!
+    @IBOutlet weak var keyboardEight: QRAPCustomKeyboardAtom!
+    @IBOutlet weak var keyboardNine: QRAPCustomKeyboardAtom!
+    @IBOutlet weak var keyboardZeroTriple: QRAPCustomKeyboardAtom!
+    @IBOutlet weak var keyboardZero: QRAPCustomKeyboardAtom!
+    @IBOutlet weak var keyboardRemove: QRAPImageKeyboardAtom!
     
     var delegate : QRInputKeyboardViewProtocol?
     

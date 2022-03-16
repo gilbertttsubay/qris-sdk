@@ -49,8 +49,6 @@ class QRPLMaucashQrisWebViewVM {
     var isFromBiller : String = ""
     var orderNo : String = ""
     var mobile : String = ""
-    var qrisPayment : QRISPaymentPLMCReq?
-    var qrisPaymentResp : QRISPaymentResp?
     var inputAmount : String?
     var delegate: QRPLMaucashQrisWebViewVMProtocol?
     var status: String = ""

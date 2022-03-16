@@ -32,7 +32,7 @@ class QRResultPaymentViewController: UIViewController, UIGestureRecognizerDelega
     @IBOutlet weak var additionalMerchant: UILabel!
     @IBOutlet weak var additionalDate: UILabel!
     
-    @IBOutlet weak var lottieAnimationView: LottieAnimationView!
+    @IBOutlet weak var lottieAnimationView: QRLottieAnimationView!
 
     var delegateSdk: QRResultPaymentViewControllerProtocol?
 

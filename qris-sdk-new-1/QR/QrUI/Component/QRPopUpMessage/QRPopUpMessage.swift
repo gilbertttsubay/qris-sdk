@@ -54,6 +54,7 @@ class QRPopUpMessage: UIView {
     static let popUpHeight : CGFloat = VCProperty.popUpHeight
     let constantMoreThanIphone7 : CGFloat = VCProperty.constantMoreThanIphone7
     let constantIphoneSe : CGFloat = VCProperty.constantIphoneSe
+    static let alertDuplicateEmail: String = "Email yang kamu masukkan sudah terdaftar. Masukkan email lain ya!"
 
     override class func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()

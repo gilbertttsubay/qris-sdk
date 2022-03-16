@@ -416,7 +416,7 @@ extension UIViewController {
     func stateLoadingQR(state: StateLoading) {
         switch state {
         case .show:
-            let loadingView = LoadingStateView()
+            let loadingView = QRLoadingStateView()
             loadingView.setupView()
             loadingView.roundCorners(value: 15)
             popUpStateLoadingQR(withView: loadingView)
@@ -424,7 +424,7 @@ extension UIViewController {
 //            SVProgressHUD.show()
 
         case .dismiss:
-            dismissPopupStateLoading()
+            QRDismissPopupStateLoading()
 //            SVProgressHUD.dismiss()
         }
     }
@@ -473,9 +473,58 @@ extension UIViewController {
 
 //MARK: Error
 
-extension QRViewController {
+extension UIViewController {
     func showErrorQR() {
 //        Alert.show(title: .errorTitle, msg: .errorMsg)
-        self.showPopupErrorMessage(message: "Terjadi gangguan pada fitur ini.\nCoba lagi ya nanti.")
+        self.QRShowPopupErrorMessage(message: "Terjadi gangguan pada fitur ini.\nCoba lagi ya nanti.")
+    }
+
+    func QRDismissPopupStateLoading() {
+        if let viewWithTag = UIApplication.shared.windows.first?.viewWithTag(UIViewController.QRtagContainerLoading) {
+            viewWithTag.removeFromSuperview()
+        }
+
+        if let subViewWithTag = UIApplication.shared.windows.first?.viewWithTag(UIViewController.QRtagSubViewLoading) {
+            subViewWithTag.removeFromSuperview()
+        }
+        UIViewController.QRisPresentLoading = false
+    }
+
+    func QRShowPopupErrorMessage(message: String, codeError: String = "", isMeme : Bool = false) {
+        DispatchQueue.main.async {
+            let bgView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+            bgView.backgroundColor = UIColor.black
+            bgView.tag = 100
+            bgView.alpha = 0.4
+            self.view.addSubview(bgView)
+
+            let vc = APPopUpErrorVC()
+            let vTop = self.navigationController?.topViewController
+            vc.onDismissTapped = { [weak self] (isTrue, value) in
+                guard self != nil else { return }
+                bgView.removeFromSuperview()
+                vc.view.removeFromSuperview()
+                vc.removeFromParent()
+            }
+
+            vc.onRemoveView = { [weak self] (value) in
+                guard self != nil else { return }
+                vc.dismiss(animated: false, completion: nil)
+                if value {
+                    bgView.removeFromSuperview()
+                    vc.view.removeFromSuperview()
+                    vc.removeFromParent()
+                }
+            }
+            vc.message = message
+            vc.codeError = codeError
+            if isMeme {
+                vc.codeError = "91"
+            }
+            vc.view.frame = self.view.frame
+            vTop!.addChild(vc)
+            vTop!.view.addSubview(vc.view)
+            vTop!.didMove(toParent: self)
+        }
     }
 }

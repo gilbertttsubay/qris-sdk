@@ -36,7 +36,7 @@ class QRTransactionIsProcessViewController: UIViewController, UIGestureRecognize
     @IBOutlet weak var additionalMerchant: UILabel!
     @IBOutlet weak var additionalDate: UILabel!
     
-    @IBOutlet weak var lottieAnimationView: LottieAnimationView!
+    @IBOutlet weak var lottieAnimationView: QRLottieAnimationView!
     
 
 
@@ -162,7 +162,7 @@ extension QRTransactionIsProcessViewController: QRTransactionIsProcessViewModelP
 
     func goToHistoryPage(){
         self.delegateSdk?.didGoToHistoryList()
-        self.qrNewRouter?.navigateToHistoryPage()
+//        self.qrNewRouter?.navigateToHistoryPage()
 
     }
 }
