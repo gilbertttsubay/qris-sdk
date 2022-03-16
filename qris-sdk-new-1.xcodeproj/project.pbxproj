@@ -166,6 +166,7 @@
 		1EEB01B272B4243786A35370 /* QRCodeResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB08AB829A83C5228F8E92 /* QRCodeResp.swift */; };
 		1EEB02D0B97CB07FCAA3E47F /* QRAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB09EDDFFC9529F521F8C5 /* QRAlert.swift */; };
 		1EEB034A88EE62FC9C851640 /* QRPaylaterMauCashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB081A913291C3E91935F2 /* QRPaylaterMauCashModel.swift */; };
+		1EEB03C4C586D81665DB3475 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB075D08177C4EED7824A3 /* SceneDelegate.swift */; };
 		1EEB093858C59FBBE3264167 /* QRAPPopUpErrorVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EEB0AFF76CC387CA11ABCB3 /* QRAPPopUpErrorVC.xib */; };
 		1EEB0A406BC9BE7F77D33BEC /* QRAPPopUpErrorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB0AFE3AC2B8524C098705 /* QRAPPopUpErrorVC.swift */; };
 		1EEB0BCB1C1FEA230860879E /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB026D1898173C2CF83030 /* UIApplicationExtension.swift */; };
@@ -345,6 +346,7 @@
 		0D1A815D27E1C1F3007B5984 /* BarlowThin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BarlowThin.ttf; sourceTree = "<group>"; };
 		0D1A815F27E1C1F3007B5984 /* CacheAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheAuthentication.swift; sourceTree = "<group>"; };
 		1EEB026D1898173C2CF83030 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
+		1EEB075D08177C4EED7824A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1EEB081A913291C3E91935F2 /* QRPaylaterMauCashModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRPaylaterMauCashModel.swift; sourceTree = "<group>"; };
 		1EEB08AB829A83C5228F8E92 /* QRCodeResp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeResp.swift; sourceTree = "<group>"; };
 		1EEB09EDDFFC9529F521F8C5 /* QRAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRAlert.swift; sourceTree = "<group>"; };
@@ -408,6 +410,7 @@
 				0D1A806627E1C186007B5984 /* Assets.xcassets */,
 				0D1A806827E1C186007B5984 /* LaunchScreen.storyboard */,
 				0D1A806B27E1C186007B5984 /* Info.plist */,
+				1EEB075D08177C4EED7824A3 /* SceneDelegate.swift */,
 			);
 			path = "qris-sdk-new-1";
 			sourceTree = "<group>";
@@ -1541,6 +1544,7 @@
 				1EEB034A88EE62FC9C851640 /* QRPaylaterMauCashModel.swift in Sources */,
 				1EEB0BCB1C1FEA230860879E /* UIApplicationExtension.swift in Sources */,
 				1EEB0E4C2BD274C2C2D4F9AD /* QRErrorResponse.swift in Sources */,
+				1EEB03C4C586D81665DB3475 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1698,7 +1702,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1728,7 +1732,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

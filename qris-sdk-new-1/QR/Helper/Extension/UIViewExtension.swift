@@ -103,6 +103,35 @@ extension UIView {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapGestureQR))
         self.addGestureRecognizer(tapGestureRecognizer)
     }
+
+    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        layer.mask = mask
+    }
+
+    public func roundCorners(_ corners: UIRectCorner = .allCorners, value: CGFloat) {
+        guard corners != .allCorners else {
+            layer.cornerRadius = value
+            return
+        }
+
+        guard #available(iOS 11.0, *) else {
+            let path = UIBezierPath(roundedRect: bounds,
+                    byRoundingCorners: corners,
+                    cornerRadii: CGSize(width: value, height: value))
+            let maskLayer = CAShapeLayer()
+            maskLayer.frame = bounds
+            maskLayer.path = path.cgPath
+            layer.mask = maskLayer
+
+            return
+        }
+
+        layer.cornerRadius = value
+        layer.maskedCorners = CACornerMask(rawValue: corners.rawValue)
+    }
     
 }
 
