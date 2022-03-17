@@ -633,6 +633,8 @@ extension QRNewTransactionFlowViewController: QRSelectPaymentViewProtocol {
     func isPaylaterSelected(isPaylater: Bool){
         self.viewModel.isPaylater = isPaylater
         print("Ini adalah paylater: \(self.viewModel.isPaylater)")
+        self.btnPayment.setAtomic(type: .filled, title: "Bayar")
+
     }
 
     func didAstrapayCellReloaded(userBalance: Int){
