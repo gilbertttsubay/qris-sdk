@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QRInputAmountViewController" customModule="astrapay" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QRInputAmountViewController" customModule="qris_sdk_new_1" customModuleProvider="target">
             <connections>
                 <outlet property="amountLabel" destination="ZcG-vj-K0i" id="2An-gV-2rF"/>
                 <outlet property="infoProfileLabel" destination="bLb-Vx-HDB" id="b81-Tl-K3x"/>
@@ -54,13 +54,13 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vUa-zZ-hQX">
                                     <rect key="frame" x="74" y="19.5" width="284" height="19.5"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLb-Vx-HDB" customClass="QRUILabelInterSemiBold" customModule="astrapay" customModuleProvider="target">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLb-Vx-HDB" customClass="QRUILabelInterSemiBold" customModule="qris_sdk_new_1" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="284" height="19.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D22-fF-FVX" customClass="QRUILabelInterRegular" customModule="astrapay" customModuleProvider="target">
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D22-fF-FVX" customClass="QRUILabelInterRegular" customModule="qris_sdk_new_1" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="284" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -83,7 +83,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TX1-Ts-JYe" userLabel="View Amount">
                             <rect key="frame" x="0.0" y="82" width="374" height="48"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jumlah Transfer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hn6-0Y-mIS" customClass="QRUILabelInterSemiBold" customModule="astrapay" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jumlah Transfer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hn6-0Y-mIS" customClass="QRUILabelInterSemiBold" customModule="qris_sdk_new_1" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="17"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="17" id="fn3-UM-xt7"/>
@@ -92,7 +92,7 @@
                                     <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Rp 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZcG-vj-K0i" customClass="QRUILabelInterRegular" customModule="astrapay" customModuleProvider="target">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Rp 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZcG-vj-K0i" customClass="QRUILabelInterRegular" customModule="qris_sdk_new_1" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="19" width="374" height="29"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="29" id="o9r-es-zqz"/>
@@ -113,11 +113,11 @@
                                 <constraint firstAttribute="trailing" secondItem="ZcG-vj-K0i" secondAttribute="trailing" id="sah-3W-E18"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZe-Mm-Zgm" userLabel="View Keyboard" customClass="InputKeyboardView" customModule="astrapay" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZe-Mm-Zgm" userLabel="View Keyboard" customClass="QRInputKeyboardView" customModule="qris_sdk_new_1" customModuleProvider="target">
                             <rect key="frame" x="30" y="176.5" width="314" height="493.5"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VgB-2O-tCV" userLabel="View Button" customClass="QRAPButtonAtom" customModule="astrapay" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VgB-2O-tCV" userLabel="View Button" customClass="QRAPButtonAtom" customModule="qris_sdk_new_1" customModuleProvider="target">
                             <rect key="frame" x="15" y="702" width="344" height="50"/>
                             <color key="backgroundColor" systemColor="systemBlueColor"/>
                             <constraints>

@@ -20,7 +20,7 @@ public struct QRClient {
     struct ClientProperty{
 
         //MARK: Delegate
-        static let AUTH_TOKEN = "Prefs.getAuthNewAccessToken()"
+        static let AUTH_TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzUxMiJ9.eyJzdWIiOiIwODU3NzA0NDIyOTgiLCJyb2xlcyI6WyJMT0dJTiJdLCJpc3MiOiJBc3RyYVBheS1EZXYiLCJ0eXBlIjoiQUNDRVNTIiwidXNlcklkIjoxOTk5LCJkZXZpY2VJZCI6IjEyMyIsInRyYW5zYWN0aW9uSWQiOiIiLCJ0cmFuc2FjdGlvblR5cGUiOiIiLCJuYmYiOjE2NDc0OTg1ODEsImV4cCI6MTY0NzUwMjE4MSwiaWF0IjoxNjQ3NDk4NTgxLCJqdGkiOiIwYTA3ZTQzYi03ODVjLTRiNzktYWZkMi01NDZjNjlmNzVjZTAiLCJlbWFpbCI6WyJnaWxiZXJ0QGcyYWNhZGVteS5jbyJdfQ.kLmGW49G18_nG0Vd01xezov2JdFwadM-unHAghafvgA0s7DPEc39-NmpXsNMRZ8-Fzr-wqZPZQ5Am_unBXtIv3qvTv7ry7L_85Hr2CHuKWyG-8AZpCt6bOQbQWXn4-6dgG3EqHP_OetTBsJno-EUek2qQiy2Qmv6MGTXt-LroDjKQOYn76WgKdbfJRUOUeuY23u-bf0nMsgZK78SKpo3OIbNyS8ERoZx5RMw439nHDBQ97FuxniM__JTPTPQ3osDAvBQPouCnSlTojxGF39lUMc-G1_c9tFUblgT5XOcTE6g1WVxccVJZZWyvcx4ls59ZFwUnThtkIkdrMjKY5idqg"
     }
 
     init(){

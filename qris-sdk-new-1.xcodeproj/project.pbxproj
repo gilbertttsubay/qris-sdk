@@ -176,12 +176,12 @@
 		2DD4572697857060DEA191B6 /* QRAPImageKeyboardAtom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD458E18313F59C18B92588 /* QRAPImageKeyboardAtom.swift */; };
 		2DD4582FB0C720D32128B7A8 /* successLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 2DD45F3226C5A77DE682B7CC /* successLottie.json */; };
 		2DD4583CD2AADC9531A4BA37 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD459742DE35CB6CAA0DA39 /* HomeVC.swift */; };
-		2DD45869456F8157E321D18B /* APImageKeyboardAtom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DD45F0EA06B86A67CF5EB49 /* APImageKeyboardAtom.xib */; };
+		2DD45869456F8157E321D18B /* QRAPImageKeyboardAtom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DD45F0EA06B86A67CF5EB49 /* QRAPImageKeyboardAtom.xib */; };
 		2DD458FFB15604E8C11F9034 /* inProgressLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 2DD454CB2051C00B221F4E1C /* inProgressLottie.json */; };
 		2DD459F9A2CAE43B9DC87D43 /* failedLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 2DD45530D30D4A213F9A78B1 /* failedLottie.json */; };
 		2DD45A240AB9275F3DCDBFDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD45E44A16C63C3559212E2 /* Main.storyboard */; };
 		2DD45B5E17543744002406DF /* QRLoadingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD450093199B934814F870C /* QRLoadingStateView.swift */; };
-		2DD45B8FF8144A318BEBCA27 /* APCustomKeyboardAtom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DD453CEC9F8A2C769BB784E /* APCustomKeyboardAtom.xib */; };
+		2DD45B8FF8144A318BEBCA27 /* QRAPCustomKeyboardAtom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DD453CEC9F8A2C769BB784E /* QRAPCustomKeyboardAtom.xib */; };
 		2DD45DC8B0BC79676C2B41BD /* loadingLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 2DD45D194BA55320B733FCAA /* loadingLottie.json */; };
 		E3289C1D2C360D4A9BB27198 /* Pods_qris_sdk_new_1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52045D6131BEF7EB30E23DB3 /* Pods_qris_sdk_new_1.framework */; };
 /* End PBXBuildFile section */
@@ -353,7 +353,7 @@
 		2DD450093199B934814F870C /* QRLoadingStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRLoadingStateView.swift; sourceTree = "<group>"; };
 		2DD45328565C695ADB0195F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		2DD453CBE14CBDAC068DE88E /* QRLottieAnimationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRLottieAnimationView.xib; sourceTree = "<group>"; };
-		2DD453CEC9F8A2C769BB784E /* APCustomKeyboardAtom.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APCustomKeyboardAtom.xib; sourceTree = "<group>"; };
+		2DD453CEC9F8A2C769BB784E /* QRAPCustomKeyboardAtom.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRAPCustomKeyboardAtom.xib; sourceTree = "<group>"; };
 		2DD454CB2051C00B221F4E1C /* inProgressLottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = inProgressLottie.json; sourceTree = "<group>"; };
 		2DD45530D30D4A213F9A78B1 /* failedLottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = failedLottie.json; sourceTree = "<group>"; };
 		2DD45789DA501A76E487552D /* QRLottieAnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRLottieAnimationView.swift; sourceTree = "<group>"; };
@@ -362,7 +362,7 @@
 		2DD45D194BA55320B733FCAA /* loadingLottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingLottie.json; sourceTree = "<group>"; };
 		2DD45E20A0307ABF588B50FF /* QRAPCustomKeyboardAtom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRAPCustomKeyboardAtom.swift; sourceTree = "<group>"; };
 		2DD45E77B2312C10652CD123 /* QRLoadingStateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRLoadingStateView.xib; sourceTree = "<group>"; };
-		2DD45F0EA06B86A67CF5EB49 /* APImageKeyboardAtom.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = APImageKeyboardAtom.xib; sourceTree = "<group>"; };
+		2DD45F0EA06B86A67CF5EB49 /* QRAPImageKeyboardAtom.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRAPImageKeyboardAtom.xib; sourceTree = "<group>"; };
 		2DD45F3226C5A77DE682B7CC /* successLottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = successLottie.json; sourceTree = "<group>"; };
 		2DD45F5C2836CE4813035134 /* HomeRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		52045D6131BEF7EB30E23DB3 /* Pods_qris_sdk_new_1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_qris_sdk_new_1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1271,8 +1271,8 @@
 		2DD45D9C1BA9D53CFCB9B08F /* QRAPCustomKeyboardAtom */ = {
 			isa = PBXGroup;
 			children = (
-				2DD45F0EA06B86A67CF5EB49 /* APImageKeyboardAtom.xib */,
-				2DD453CEC9F8A2C769BB784E /* APCustomKeyboardAtom.xib */,
+				2DD45F0EA06B86A67CF5EB49 /* QRAPImageKeyboardAtom.xib */,
+				2DD453CEC9F8A2C769BB784E /* QRAPCustomKeyboardAtom.xib */,
 				2DD458E18313F59C18B92588 /* QRAPImageKeyboardAtom.swift */,
 				2DD45E20A0307ABF588B50FF /* QRAPCustomKeyboardAtom.swift */,
 			);
@@ -1424,8 +1424,8 @@
 				2DD4582FB0C720D32128B7A8 /* successLottie.json in Resources */,
 				2DD458FFB15604E8C11F9034 /* inProgressLottie.json in Resources */,
 				2DD4519D4E71347624F87352 /* QRLottieAnimationView.xib in Resources */,
-				2DD45869456F8157E321D18B /* APImageKeyboardAtom.xib in Resources */,
-				2DD45B8FF8144A318BEBCA27 /* APCustomKeyboardAtom.xib in Resources */,
+				2DD45869456F8157E321D18B /* QRAPImageKeyboardAtom.xib in Resources */,
+				2DD45B8FF8144A318BEBCA27 /* QRAPCustomKeyboardAtom.xib in Resources */,
 				2DD4528A0C5C194727F9BB20 /* QRLoadingStateView.xib in Resources */,
 				1EEB093858C59FBBE3264167 /* QRAPPopUpErrorVC.xib in Resources */,
 				2DD45A240AB9275F3DCDBFDC /* Main.storyboard in Resources */,

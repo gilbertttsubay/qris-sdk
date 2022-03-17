@@ -17,7 +17,7 @@ class QRAPImageKeyboardAtom: UIView {
     
     
     var contentView:UIView?
-    @IBInspectable var nibName:String? = "APImageKeyboardAtom"
+    @IBInspectable var nibName:String? = "QRAPImageKeyboardAtom"
     
     override func layoutSubviews() {
     }
