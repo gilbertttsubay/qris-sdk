@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19528" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,12 +12,12 @@
         <!--View Controller-->
         <scene sceneID="nHV-Uk-G2L">
             <objects>
-                <viewController storyboardIdentifier="QRViewControllerIdentifier" id="5m1-eR-zLb" customClass="QRViewController" customModule="astrapay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QRViewControllerIdentifier" id="5m1-eR-zLb" customClass="QRViewController" customModule="qris_sdk_new_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ecu-k9-wND">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEJ-3h-whq" userLabel="Qr Camera View" customClass="QRCameraView" customModule="astrapay" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEJ-3h-whq" userLabel="Qr Camera View" customClass="QRCameraView" customModule="qris_sdk_new_1" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                             </view>
@@ -33,7 +34,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" restorationIdentifier="QRCameraControlViewIdentifier" translatesAutoresizingMaskIntoConstraints="NO" id="iXu-fS-jlq" customClass="QRCameraControlView" customModule="astrapay" customModuleProvider="target">
+                            <view contentMode="scaleToFill" restorationIdentifier="QRCameraControlViewIdentifier" translatesAutoresizingMaskIntoConstraints="NO" id="iXu-fS-jlq" customClass="QRCameraControlView" customModule="qris_sdk_new_1" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="767" width="414" height="129"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -90,7 +91,7 @@
         <!--New Transaction Flow View Controller-->
         <scene sceneID="SCb-Qc-PPN">
             <objects>
-                <viewController storyboardIdentifier="qRNewTransactionFlowViewControllerIdentifier" id="Zv5-gp-haN" customClass="QRNewTransactionFlowViewController" customModule="astrapay" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="qRNewTransactionFlowViewControllerIdentifier" id="Zv5-gp-haN" customClass="QRNewTransactionFlowViewController" customModule="qris_sdk_new_1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JTc-6i-dsM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -102,7 +103,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0sB-0z-5o0">
                                 <rect key="frame" x="0.0" y="784" width="414" height="78"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iBs-K7-ape" customClass="QRAPButtonAtom" customModule="astrapay" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iBs-K7-ape" customClass="QRAPButtonAtom" customModule="qris_sdk_new_1" customModuleProvider="target">
                                         <rect key="frame" x="35" y="14" width="344" height="50"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
