@@ -67,6 +67,7 @@ class QRNewTransactionFlowViewController: UIViewController {
 
     //variabel dari kelas lain
     var qrNewRouter: QRNewRouter?
+    var qrPaylaterRouter: QRPaylaterRouter?
     var paymentModels: QRAPTransactionDetailsModel?
 
 
@@ -93,6 +94,7 @@ class QRNewTransactionFlowViewController: UIViewController {
         self.setTextNavigationQR(theme: .normal, title: VCProperty.navigationTitle, navigator: .back, navigatorCallback: nil)
         self.tableView.reloadData()
         self.setupAction()
+        self.viewModel.isPaylater = false
     }
 
     override func viewDidLoad() {
@@ -123,6 +125,7 @@ extension QRNewTransactionFlowViewController {
 
     func setupRouter(){
         qrNewRouter = QRNewRouter(viewController: self)
+        self.qrPaylaterRouter = QRPaylaterRouter(viewController: self)
     }
 
     func setupAction(){
@@ -373,7 +376,7 @@ extension QRNewTransactionFlowViewController: QRNewTransactionFlowViewModelProto
             return
         }
         var qrPaylaterTransactionPayload = QRPaylaterTransactionPayload(amounTransaction: self.viewModel.amountTransaction ?? 0, tipTransaction: self.viewModel.tipAmount ?? 0, totalAmountTransaction: self.viewModel.totalAmountTransaction ?? 0, qrInquiryDtoViewData: qrInquryDtoViewData)
-        self.qrNewRouter?.navigateToTenorLoanPage(model: qrPaylaterTransactionPayload)
+        self.qrPaylaterRouter?.navigateToTenorLoanPage(model: qrPaylaterTransactionPayload)
     }
 
     func didPostToTransactionPaylaterThroughOtp() {

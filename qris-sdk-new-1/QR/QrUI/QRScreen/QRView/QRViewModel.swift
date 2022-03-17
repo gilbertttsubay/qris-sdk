@@ -18,7 +18,7 @@ protocol QRViewModelProtocol: class {
 class QRViewModel {
     
 //    private var qrViewController = QRViewController()
-    private let qrClient = QRClient()
+    private var qrClient = QRClient()
 //    var userBalanceAstrapay: Int {
 //        return Int(Prefs.getUser()?.balance ?? 0)
 //    }

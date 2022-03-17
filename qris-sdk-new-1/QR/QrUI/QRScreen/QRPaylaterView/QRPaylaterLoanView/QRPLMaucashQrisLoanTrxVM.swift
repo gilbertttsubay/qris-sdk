@@ -24,6 +24,7 @@ struct QRPaylaterTransactionPayload{
     var tipTransaction: Int = 0
     var totalAmountTransaction: Int = 0
     var qrInquiryDtoViewData: QRInquiryDtoViewData = QRInquiryDtoViewData()
+    var phoneNumber: String = ""
 }
 
 protocol QRPLMaucashQrisLoanTrxVMProtocol {
@@ -92,8 +93,8 @@ protocol QRPLMaucashQrisLoanTrxVMProtocol {
 class QRPLMaucashQrisLoanTrxVM {
 
 
-    let qrClient = QRClient()
-    let qrPaylaterClient = QRPaylaterClient()
+    var qrClient = QRClient()
+    var qrPaylaterClient = QRPaylaterClient()
     var delegate: QRPLMaucashQrisLoanTrxVMProtocol?
     var qrisTenorTrxPLMC : [QRTenorTrx]? = []
     var qrPlmcQrisLoanTrxPayload: QRPLMaucashQrisLoanTrxPayload?
@@ -136,6 +137,7 @@ class QRPLMaucashQrisLoanTrxVM {
     var totalAmountTransaction: Int {
         return self.qrPaylaterTransactionPayload.totalAmountTransaction
     }
+
 
     public convenience init (qrPaylaterTransactionPayload: QRPaylaterTransactionPayload){
         self.init()

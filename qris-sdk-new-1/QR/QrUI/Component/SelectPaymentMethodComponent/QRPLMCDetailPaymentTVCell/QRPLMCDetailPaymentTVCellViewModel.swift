@@ -20,7 +20,7 @@ class QRPLMCDetailPaymentTVCellViewModel {
 
     var delegate: QRPLMCDetailPaymentTVCellViewModelProtocol?
 
-    private let qrPaylaterClient = QRPaylaterClient()
+    private var qrPaylaterClient = QRPaylaterClient()
 
 
     func getInquiryPaylater(content: QRSelectPaymentViewPayload){

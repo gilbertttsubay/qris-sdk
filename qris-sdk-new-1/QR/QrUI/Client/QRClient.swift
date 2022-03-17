@@ -6,21 +6,30 @@
 import Foundation
 import Alamofire
 
-public protocol QRClientProtocol{
+public enum BuildMode{
+    case sit
+    case uat
+    case prod
+}
+
+public protocol ClientProtocol {
     func getAuthToken() -> String
     func getUserToken() -> String
+    func getBuildMode() -> BuildMode
 }
 public struct QRClient {
 
 
+    var delegateSdk: ClientProtocol?
 
+    //user id ini udah ga dipake sebenernya, hanya untuk ngetest jika gateway mati
     var userId = "1999"
     var urlBaseQrisService: String = QRConstant.QRIS_SIT_API
 
     struct ClientProperty{
 
         //MARK: Delegate
-        static let AUTH_TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzUxMiJ9.eyJzdWIiOiIwODU3NzA0NDIyOTgiLCJyb2xlcyI6WyJMT0dJTiJdLCJpc3MiOiJBc3RyYVBheS1EZXYiLCJ0eXBlIjoiQUNDRVNTIiwidXNlcklkIjoxOTk5LCJkZXZpY2VJZCI6IjEyMyIsInRyYW5zYWN0aW9uSWQiOiIiLCJ0cmFuc2FjdGlvblR5cGUiOiIiLCJuYmYiOjE2NDc1MDIxMzksImV4cCI6MTY0NzUwNTczOSwiaWF0IjoxNjQ3NTAyMTM5LCJqdGkiOiJhODc0ZmRjYi1lY2YyLTQ5MmEtYjJkYi1iZGIzZDRlZTIzN2MiLCJlbWFpbCI6WyJnaWxiZXJ0QGcyYWNhZGVteS5jbyJdfQ.aIpfWSfrVQsbdt6lEtg4uHdlxyfHjhcpFKsen__zTSH1U7nqgO-Uc07tZVgcsfOU5s-nV1pF7ekiLV_RbdD2yQ_9QYVLBh0DlOm2A8GZ9r6XBB392qFRxWFJoTklJgf9bH2p26fHl9MY6Q8H1Z09I6kiuiO-1idQ0SMud08AdTDWXuaqw2t3E1XGSDq-tfobUd8ZcKhsc8IxU3f9SOvI2pGYIieBaSbOX1fpIfiuyj47QTkmZBEVMMsjNOskGc3amnlFuaYg8h0BicdJRA3dV3kS_WziRkjeZYS25MBpPeAhmecfbE62_fVSM1qNnPiX7JjXwukJ6U_iVEzee2LGig"
+        static let AUTH_TOKEN = QRConstant.AUTH_TOKEN_FOR_TEST
     }
 
     init(){
@@ -41,28 +50,42 @@ public struct QRClient {
 
     }
 
-    let headerForMobileGateWay = ["Authorization":"Bearer \(ClientProperty.AUTH_TOKEN)",
-                                  "Content-Type": "application/json"]
-
 
 //    let urlBaseQrisService = "https://qris-sit-api.astrapay.com/qris-service"
 //    let urlBaseQrisService = "http://bc3b-180-244-166-129.ngrok.io/qris-service"
 
 
+   public mutating func determineBuildMode(){
+        var buildMode: BuildMode = self.delegateSdk?.getBuildMode() ?? .sit
+        switch (buildMode){
+        case .sit:
+            self.urlBaseQrisService = QRConstant.QRIS_SIT_API
+            return
+        case .uat:
+            self.urlBaseQrisService = QRConstant.QRIS_UAT_API
+            return
+        case .prod:
+            self.urlBaseQrisService = QRConstant.QRIS_PROD_API
+            return
 
-    public func constructHeaderGeneral() -> HTTPHeaders {
+        }
+    }
+
+    private func constructHeaderGeneral() -> HTTPHeaders {
         let header: HTTPHeaders = [
 //            "X-Application-Token": "\(Prefs.getUser()!.token)",
+//            "Authorization": "Bearer \(self.delegateSdk?.getAuthToken())",
             "Authorization": "Bearer \(ClientProperty.AUTH_TOKEN)",
             "Content-Type": "application/json"
         ]
         return header
     }
 
-    public func constructHeaderForInquiryApi() -> HTTPHeaders {
+    private func constructHeaderForInquiryApi() -> HTTPHeaders {
         let header: HTTPHeaders = [
 //            QRConstant.HEADER_X_APPLICATION_TOKEN: "\(Prefs.getUser()!.accessToken)" , //hardcode aja dulu nanti
             QRConstant.HEADER_X_SDK_TOKEN: QRConstant.XTOKEN,
+//            "Authorization": "Bearer \(self.delegateSdk?.getAuthToken())",
             "Authorization": "Bearer \(ClientProperty.AUTH_TOKEN)",
             "Content-Type": "application/qris",
 
@@ -73,7 +96,8 @@ public struct QRClient {
     }
 
 
-    func getQrisInquiry(requestQrText: String, completion: @escaping(_:QRResponse<QRInquiryResponse>) -> Void) -> DataRequest{
+    mutating func getQrisInquiry(requestQrText: String, completion: @escaping(_:QRResponse<QRInquiryResponse>) -> Void) -> DataRequest{
+        determineBuildMode()
         var header = constructHeaderForInquiryApi()
         let urlInquiry: String = "\(urlBaseQrisService)/inquiries"
 
@@ -147,7 +171,8 @@ public struct QRClient {
 extension QRClient{
 
     //MARK: Transaction pin client
-    func postToTransactionPin(request: QRTransactionPinRequest, qrInquiryDtoViewData: QRInquiryDtoViewData, completion: @escaping(_:QRResponse<QRTransactionPinResponse>) -> Void) -> DataRequest {
+    mutating func postToTransactionPin(request: QRTransactionPinRequest, qrInquiryDtoViewData: QRInquiryDtoViewData, completion: @escaping(_:QRResponse<QRTransactionPinResponse>) -> Void) -> DataRequest {
+        determineBuildMode()
         var header = self.constructHeaderGeneral()
         header[QRConstant.HEADER_X_TRANSACTION_TOKEN] = qrInquiryDtoViewData.transactionToken
         header[QRConstant.HEADER_X_SDK_TOKEN] = QRConstant.XTOKEN
@@ -227,7 +252,8 @@ extension QRClient{
 
 
     //MARK: Transaksi otp client
-    func postToTransactionOtpAfterInputPin(request: QRTransactionOtpRequest, requestForPathAndHeader: QRTransactionOtpRequestForPathAndHeader, completion: @escaping(_:QRResponse<QRTransactionOtpResponse>) -> Void) -> DataRequest {
+    mutating func postToTransactionOtpAfterInputPin(request: QRTransactionOtpRequest, requestForPathAndHeader: QRTransactionOtpRequestForPathAndHeader, completion: @escaping(_:QRResponse<QRTransactionOtpResponse>) -> Void) -> DataRequest {
+        determineBuildMode()
         var header = self.constructHeaderGeneral()
         header[QRConstant.HEADER_X_SDK_TOKEN] = "XTOKEN"
         header[QRConstant.HEADER_USER_ID] = self.userId
@@ -293,8 +319,8 @@ extension QRClient{
 
 //MARK: Get transaction detail by id
 extension QRClient{
-    func getDetailTransaksiById(requestIdTransaksi: String, completion: @escaping(_:QRResponse<QRGetDetailTransaksiByIdResponse>) -> Void) -> DataRequest {
-
+    mutating func getDetailTransaksiById(requestIdTransaksi: String, completion: @escaping(_:QRResponse<QRGetDetailTransaksiByIdResponse>) -> Void) -> DataRequest {
+        determineBuildMode()
 
         let getDetailUrl: String = "\(urlBaseQrisService)/me/transactions/\(requestIdTransaksi)"
         var headers: HTTPHeaders = self.constructHeaderGeneral()
@@ -333,8 +359,8 @@ extension QRClient{
         return request
     }
 
-    func getDetailTransaksiByToken(requestTokenTransaksi: String, completion: @escaping(_:QRResponse<QRGetDetailTransaksiByIdResponseDto>) -> Void) -> DataRequest {
-
+    mutating func getDetailTransaksiByToken(requestTokenTransaksi: String, completion: @escaping(_:QRResponse<QRGetDetailTransaksiByIdResponseDto>) -> Void) -> DataRequest {
+        determineBuildMode()
         let getDetailUrl: String = "\(urlBaseQrisService)/me/transactions?token=\(requestTokenTransaksi)"
         var headers: HTTPHeaders = self.constructHeaderGeneral()
         headers[QRConstant.HEADER_USER_ID] = self.userId
@@ -409,8 +435,8 @@ extension QRClient{
 
 //MARK: Resend Otp
 extension QRClient{
-    func getResendOtp(requestIdInquiry: String, completion: @escaping(_:QRResponse<QRResendOtpDto>) -> Void) -> DataRequest {
-
+    mutating func getResendOtp(requestIdInquiry: String, completion: @escaping(_:QRResponse<QRResendOtpDto>) -> Void) -> DataRequest {
+        determineBuildMode()
 
         let getResendOtpUrl: String = "\(urlBaseQrisService)/inquiries/\(requestIdInquiry)/otps"
         var headers: HTTPHeaders = self.constructHeaderGeneral()
@@ -476,7 +502,8 @@ extension QRClient{
 
 //MARK: patch transaction paylater
 extension QRClient {
-    func patchQrisTrxPLMC(id: Int, completion:@escaping(QRResponse<PatchTrxQrisPLMC>) -> Void) -> DataRequest {
+    mutating func patchQrisTrxPLMC(id: Int, completion:@escaping(QRResponse<PatchTrxQrisPLMC>) -> Void) -> DataRequest {
+        determineBuildMode()
         var urlPatchTrxQrisPLMC : String = "\(urlBaseQrisService)/paylater-service/transactions/\(id)/paylater"
 
         let request = AF.request(urlPatchTrxQrisPLMC,method: .patch, parameters: nil, encoding: URLEncoding.default, headers: self.constructHeaderGeneral())

@@ -95,7 +95,7 @@ class QRNewTransactionFlowViewModel {
     var qrInquiryDtoViewData: QRInquiryDtoViewData?
     var delegate: QRNewTransactionFlowViewModelProtocol?
     var qrTransactionPinResponse: QRTransactionPinResponse?
-    private let qrClient = QRClient()
+    private var qrClient = QRClient()
     var qrPaymentAfterInputPinPayload: QRPaymentAfterInputPinPayload?
 
     var isPaylater: Bool = false

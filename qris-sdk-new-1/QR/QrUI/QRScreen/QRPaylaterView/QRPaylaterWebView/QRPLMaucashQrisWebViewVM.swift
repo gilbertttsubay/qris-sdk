@@ -43,7 +43,7 @@ protocol QRPLMaucashQrisWebViewVMProtocol {
 }
 
 class QRPLMaucashQrisWebViewVM {
-    let service = QRClient()
+    var service = QRClient()
     var productName : String = ""
     var productNameDetail: String = ""
     var isFromBiller : String = ""

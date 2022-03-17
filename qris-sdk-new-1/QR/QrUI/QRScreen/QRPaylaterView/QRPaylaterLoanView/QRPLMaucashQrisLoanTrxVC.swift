@@ -23,7 +23,7 @@ class QRPLMaucashQrisLoanTrxVC: UIViewController {
         static let imageChecked = "login_checked_box"
         static let imageUnChecked = "login_uncheck_box"
         static let constantHeightPopUp = 370
-        static let heightPopUpPin = 300
+        static let heightPopUpPin = 330
         static let heightPopUpOTP = 380
         static let imagePinName: String = "illustration_pin"
 
