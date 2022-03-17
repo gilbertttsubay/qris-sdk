@@ -20,9 +20,10 @@ class HomeRouter {
 //
     func navigateToQR(){
         guard let vcQR = UIStoryboard(name:QRConstant.qrStoryBoardName, bundle:nil).instantiateViewController(withIdentifier: QRConstant.qrViewControllerIdentifier) as? QRViewController else {
+            print("gagal")
             return
         }
 
-        self.vc?.navigationController?.pushViewController(vcQR, animated:true)
+        self.vc?.navigationController?.popToViewController(vcQR, animated: true)
     }
 }

@@ -6,7 +6,7 @@
 //  Copyright © 2021 Astra Digital Arta. All rights reserved.
 //
 
-import Foundation
+//import Foundation
 //import Swinject
 //
 //var qrContainer: Container = Container()

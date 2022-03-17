@@ -30,8 +30,6 @@ target 'qris-sdk-new-1' do
   pod 'TTSegmentedControl', '~>0.4.9'
 
   #refactor
-  # pod 'Swinject', '2.6.0'
-  # pod 'SwinjectStoryboard', '2.2.0'
   pod 'RxSwift'
 
 end

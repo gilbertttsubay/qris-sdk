@@ -28,32 +28,13 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.router = HomeRouter(viewController: self)
-        self.setupActions()
         // Do any additional setup after loading the view.
     }
 
     @IBAction func scanQrisPressed(_ sender: UIButton) {
-        DispatchQueue.main.async {
-            guard let vcQR = UIStoryboard(name:QRConstant.qrStoryBoardName, bundle:nil).instantiateViewController(withIdentifier: QRConstant.qrViewControllerIdentifier) as? QRViewController else {
-                return
-            }
-
-            self.navigationController?.pushViewController(vcQR, animated:true)
-        }
-
-        print("test")
-    }
-    
-    func setupActions(){
-        self.buttonGoToQris.addTapGestureRecognizerQR(action: {
-            DispatchQueue.main.async {
-                guard let vcQR = UIStoryboard(name:QRConstant.qrStoryBoardName, bundle:nil).instantiateViewController(withIdentifier: QRConstant.qrViewControllerIdentifier) as? QRViewController else {
-                    return
-                }
-
-                self.navigationController?.pushViewController(vcQR, animated:true)
-            }
-        })
+        let button = QRAPButtonAtom()
+        button.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        router?.navigateToQR()
     }
     
 }

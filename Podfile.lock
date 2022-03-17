@@ -198,9 +198,9 @@ PODS:
   - Neumann (1.2.0)
   - PromisesObjC (2.0.0)
   - RxSwift (6.5.0)
-  - SDWebImage (5.12.4):
-    - SDWebImage/Core (= 5.12.4)
-  - SDWebImage/Core (5.12.4)
+  - SDWebImage (5.12.5):
+    - SDWebImage/Core (= 5.12.5)
+  - SDWebImage/Core (5.12.5)
   - Sejima (2.0.0):
     - Neumann
   - SVProgressHUD (2.2.5)
@@ -294,11 +294,11 @@ SPEC CHECKSUMS:
   Neumann: 9ce57ac4a26916c47f079e213a442558f2437cf4
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
-  SDWebImage: 631cf572cc93dfdfe54162e556410a61f1141928
+  SDWebImage: 0905f1b7760fc8ac4198cae0036600d67478751e
   Sejima: e76713557f5f6b7ec4f1934ea02fda755775a3b4
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TTSegmentedControl: d8005c0cdca2549ade0aee8e09240723e2478a6a
 
-PODFILE CHECKSUM: 485285307281ad6040ee3b59d65f1031e6921874
+PODFILE CHECKSUM: 9d2af528d775c45256e8f9c5729580a0d983c842
 
 COCOAPODS: 1.11.2
