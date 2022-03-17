@@ -17,8 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let controller = QRViewController()
-        window?.rootViewController = controller
+        guard let vcQR = UIStoryboard(name:QRConstant.qrStoryBoardName, bundle:nil).instantiateViewController(withIdentifier: QRConstant.qrViewControllerIdentifier) as? QRViewController else {
+            //            print(HomeRouter.defaultIdentifierStoryboardMessage("MainQRVC"))
+            return false
+        }
+        window?.rootViewController = vcQR
         window?.makeKeyAndVisible()
         return true
     }

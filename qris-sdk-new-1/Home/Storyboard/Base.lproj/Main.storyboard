@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19528" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad12_9" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,6 +35,14 @@
                                 <rect key="frame" x="0.0" y="120.5" width="1024" height="561"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                             </imageView>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i1D-Q0-D87" userLabel="View Button" customClass="QRAPButtonAtom" customModule="qris_sdk_new_1" customModuleProvider="target">
+                                <rect key="frame" x="340" y="692.5" width="344" height="50"/>
+                                <viewLayoutGuide key="safeArea" id="2R8-rJ-Yrj"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="DIe-Ls-Q5i"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -43,6 +51,8 @@
                             <constraint firstItem="Lxk-gy-3IJ" firstAttribute="top" secondItem="juf-AZ-iHM" secondAttribute="bottom" constant="50" id="66b-fe-r2e"/>
                             <constraint firstItem="GJL-7D-0OB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="7Tc-OK-qBS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="juf-AZ-iHM" secondAttribute="trailing" id="CC2-Nv-eVA"/>
+                            <constraint firstItem="i1D-Q0-D87" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FZs-ZB-jse"/>
+                            <constraint firstItem="i1D-Q0-D87" firstAttribute="top" secondItem="GJL-7D-0OB" secondAttribute="bottom" constant="10" id="RBv-nH-qJG"/>
                             <constraint firstItem="juf-AZ-iHM" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="aeR-80-REF"/>
                             <constraint firstItem="GJL-7D-0OB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cku-15-ED5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GJL-7D-0OB" secondAttribute="trailing" id="d7l-HS-MIw"/>
@@ -50,16 +60,22 @@
                             <constraint firstItem="Lxk-gy-3IJ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="lDc-WF-Zpj"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonGoToQris" destination="i1D-Q0-D87" id="f2M-Ny-64a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="119"/>
+            <point key="canvasLocation" x="138.8671875" y="118.59443631039531"/>
         </scene>
     </scenes>
     <resources>
         <image name="qrcode.viewfinder" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

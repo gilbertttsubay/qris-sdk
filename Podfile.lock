@@ -204,9 +204,6 @@ PODS:
   - Sejima (2.0.0):
     - Neumann
   - SVProgressHUD (2.2.5)
-  - Swinject (2.6.0)
-  - SwinjectStoryboard (2.2.0):
-    - Swinject (~> 2.6)
   - TTSegmentedControl (0.4.10)
 
 DEPENDENCIES:
@@ -229,8 +226,6 @@ DEPENDENCIES:
   - SDWebImage
   - Sejima
   - SVProgressHUD
-  - Swinject (= 2.6.0)
-  - SwinjectStoryboard (= 2.2.0)
   - TTSegmentedControl (~> 0.4.9)
 
 SPEC REPOS:
@@ -267,8 +262,6 @@ SPEC REPOS:
     - SDWebImage
     - Sejima
     - SVProgressHUD
-    - Swinject
-    - SwinjectStoryboard
     - TTSegmentedControl
 
 SPEC CHECKSUMS:
@@ -304,10 +297,8 @@ SPEC CHECKSUMS:
   SDWebImage: 631cf572cc93dfdfe54162e556410a61f1141928
   Sejima: e76713557f5f6b7ec4f1934ea02fda755775a3b4
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
-  SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
   TTSegmentedControl: d8005c0cdca2549ade0aee8e09240723e2478a6a
 
-PODFILE CHECKSUM: e3c4129476e62a73edb693dd41dfcd6c8f1d4ff4
+PODFILE CHECKSUM: 485285307281ad6040ee3b59d65f1031e6921874
 
 COCOAPODS: 1.11.2

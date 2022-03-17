@@ -9,6 +9,7 @@ import UIKit
 
 class HomeVC: UIViewController {
     
+    @IBOutlet weak var buttonGoToQris: QRAPButtonAtom!
     struct VCProperty{
         static let storyboardIdentifier : String = "Main"
         static let identifier : String = "mainHomeVCIdentifier"
@@ -27,12 +28,32 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.router = HomeRouter(viewController: self)
+        self.setupActions()
         // Do any additional setup after loading the view.
     }
 
     @IBAction func scanQrisPressed(_ sender: UIButton) {
-        router?.navigateToQR()
+        DispatchQueue.main.async {
+            guard let vcQR = UIStoryboard(name:QRConstant.qrStoryBoardName, bundle:nil).instantiateViewController(withIdentifier: QRConstant.qrViewControllerIdentifier) as? QRViewController else {
+                return
+            }
+
+            self.navigationController?.pushViewController(vcQR, animated:true)
+        }
+
         print("test")
+    }
+    
+    func setupActions(){
+        self.buttonGoToQris.addTapGestureRecognizerQR(action: {
+            DispatchQueue.main.async {
+                guard let vcQR = UIStoryboard(name:QRConstant.qrStoryBoardName, bundle:nil).instantiateViewController(withIdentifier: QRConstant.qrViewControllerIdentifier) as? QRViewController else {
+                    return
+                }
+
+                self.navigationController?.pushViewController(vcQR, animated:true)
+            }
+        })
     }
     
 }

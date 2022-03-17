@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Swinject
-
-var qrContainer: Container = Container()
+//import Swinject
+//
+//var qrContainer: Container = Container()
 
