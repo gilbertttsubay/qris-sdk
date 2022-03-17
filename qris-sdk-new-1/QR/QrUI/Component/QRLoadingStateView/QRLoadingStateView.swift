@@ -11,8 +11,8 @@ import UIKit
 class QRLoadingStateView: UIView {
     @IBOutlet weak var lottieAnimationView: QRLottieAnimationView!
     
-    static let nibName = "LoadingStateView"
-    static let identifier = "LoadingStateViewIdentifier"
+    static let nibName = "QRLoadingStateView"
+    static let identifier = "QRLoadingStateViewIdentifier"
     
     func setupView() {
         self.lottieAnimationView.setupAnimation(animation: .loadingState, animationSpeed: 1)

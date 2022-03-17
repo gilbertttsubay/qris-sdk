@@ -4,6 +4,8 @@
 <dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Kamera akan digunakan untuk memindai QR dan verifikasi data diri.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Akses Photo dan Library akan digunakan untuk mendapatkan gambar QR yang digunakan untuk pembayaran transaksi</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
