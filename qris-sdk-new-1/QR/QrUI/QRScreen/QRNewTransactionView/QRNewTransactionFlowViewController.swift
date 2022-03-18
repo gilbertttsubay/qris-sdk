@@ -129,7 +129,7 @@ extension QRNewTransactionFlowViewController {
     }
 
     func setupAction(){
-        self.checkEnableButton()
+        self.disableButton()
     }
 }
 
@@ -261,9 +261,9 @@ extension QRNewTransactionFlowViewController {
     }
 }
 extension QRNewTransactionFlowViewController {
-    private func checkEnableButton() {
+    private func disableButton() {
         //TODO bikin logic untuk enable/disable cuma gatau gimana
-        self.btnPayment.setAtomic(type: .filled, title: "BAYAR")
+        self.btnPayment.setAtomic(type: .disabled, title: "BAYAR")
 //        if !self.viewModel.userBalanceEnoughCompareToTotalAmount {
 //            self.btnPayment.setAtomic(type: .disabled, title: "BAYAR")
 //        }
@@ -619,9 +619,6 @@ extension QRNewTransactionFlowViewController: QRPopUpOTPProtocol {
 
 //MARK: Implement QRPLMCDetailPaymentViewProtocol (cara set pembayaran)
 extension QRNewTransactionFlowViewController: QRSelectPaymentViewProtocol {
-    func didSelectPayment(index: Int, selectedImageFromAstrapay: Bool, selectedImageFromPLMC: Bool){
-        self.viewModel.qrPaymentAfterInputPinPayloadBuilder(indexPathRow: index, selectedImageFromAstrapay: selectedImageFromAstrapay, selectedImageFromPLMC: selectedImageFromPLMC)
-    }
     func didSelectAktifkan(){
 
     }
@@ -635,6 +632,9 @@ extension QRNewTransactionFlowViewController: QRSelectPaymentViewProtocol {
 
     func isPaylaterSelected(isPaylater: Bool){
         self.viewModel.isPaylater = isPaylater
+        if !self.viewModel.isPaylater {
+            self.viewModel.qrPaymentAfterInputPinPayloadBuilder()
+        }
         print("Ini adalah paylater: \(self.viewModel.isPaylater)")
         self.btnPayment.setAtomic(type: .filled, title: "Bayar")
 
@@ -642,7 +642,7 @@ extension QRNewTransactionFlowViewController: QRSelectPaymentViewProtocol {
 
     func didAstrapayCellReloaded(userBalance: Int){
         self.viewModel.userBalanceAstrapay = userBalance
-        self.checkEnableButtonIfBalanceIsNotEnough()
+
     }
 }
 

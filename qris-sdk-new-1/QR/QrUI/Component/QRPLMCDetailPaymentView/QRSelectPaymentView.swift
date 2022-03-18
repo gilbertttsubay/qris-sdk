@@ -9,7 +9,6 @@
 import UIKit
 
 protocol QRSelectPaymentViewProtocol {
-    func didSelectPayment(index: Int, selectedImageFromAstrapay: Bool, selectedImageFromPLMC: Bool)
     func didSelectAktifkan()
 
 
@@ -151,6 +150,7 @@ extension QRSelectPaymentView: UITableViewDelegate, UITableViewDataSource {
             cell.showSeletedPaymentImage()
             self.delegate?.isPaylaterSelected(isPaylater: false)
 
+
             break
         case 1:
             var cell = tableView.cellForRow(at: indexPath) as! QRDetailPaymentTVCellPLMC
@@ -161,7 +161,6 @@ extension QRSelectPaymentView: UITableViewDelegate, UITableViewDataSource {
         default:
             return
         }
-            self.delegate?.didSelectPayment(index: indexPath.row, selectedImageFromAstrapay: selectedImageFromAstrapay, selectedImageFromPLMC: selectedImageFromPLMC)
     }
 
     public func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {

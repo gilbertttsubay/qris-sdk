@@ -34,7 +34,7 @@ public struct QRTransactionClient{
 
         let urlRequest = "\(urlBaseTransactionService)/organization-members/balances"
 
-        let request = AF.request(urlRequest, method: .get, parameters: [:], encoding: JSONEncoding.default, headers: header){$0.timeoutInterval = 60}
+        let request = AF.request(urlRequest, method: .get, parameters: nil, encoding: URLEncoding.default, headers: header){$0.timeoutInterval = 60}
         .responseJSON(completionHandler: {
             response in
 

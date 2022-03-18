@@ -21,9 +21,8 @@ class QRDetailPaymentTVCellAstrapayViewModel{
 
     var delegate: QRDetailPaymentTVCellAstrapayViewModelProtocol?
 
-    func initVM(content: QRSelectPaymentViewPayload, userBalance: Int){
+    func initVM(content: QRSelectPaymentViewPayload){
         self.content = content
-        self.userBalance = userBalance
 
     }
 

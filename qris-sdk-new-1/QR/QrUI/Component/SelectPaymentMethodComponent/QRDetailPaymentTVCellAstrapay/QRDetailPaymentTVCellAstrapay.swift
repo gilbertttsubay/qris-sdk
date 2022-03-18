@@ -42,6 +42,14 @@ class QRDetailPaymentTVCellAstrapay: UITableViewCell {
 
 
     func setupView(content: QRSelectPaymentViewPayload) {
+        self.viewModel.initVM(content: content)
+        self.isHidden = true
+
+
+        DispatchQueue.main.async {
+            self.viewModel.setupViewLogic()
+        }
+
 
         self.paymentImage.image = UIImage(named: self.paymentImageName)
         self.paymentNameLabel.text = self.paymentName
@@ -68,10 +76,9 @@ class QRDetailPaymentTVCellAstrapay: UITableViewCell {
 
         //MARK: Perlu delegate ke luar
 //        var userBalance: Int = Int(Prefs.getUser()?.balance ?? 0)
-        var userBalance: Int = Int(self.delegateSDK?.getUserBalance() ?? "0") ?? 0
+//        var userBalance: Int = Int(self.delegateSDK?.getUserBalance() ?? "0") ?? 0
 
-        self.viewModel.initVM(content: content, userBalance:  userBalance)
-        self.viewModel.setupViewLogic()
+
 
     }
     func setupProtocol(){
@@ -103,6 +110,7 @@ extension QRDetailPaymentTVCellAstrapay: QRDetailPaymentTVCellAstrapayViewModelP
             self.selectedPaymentImage.isHidden = true
             self.isUserInteractionEnabled = false
 //            self,delegate?.didAstrapayBalanceIsNotEnough()
+        self.isHidden = false
         })
 
     }
@@ -112,6 +120,7 @@ extension QRDetailPaymentTVCellAstrapay: QRDetailPaymentTVCellAstrapayViewModelP
             self.informationLabel.isHidden = true
 //            self.selectedPaymentImage.isHidden = false
             self.isUserInteractionEnabled = true
+            self.isHidden = false
             self.delegate?.didAstrapayCellReloaded(userBalance: userBalance)
 
         }
