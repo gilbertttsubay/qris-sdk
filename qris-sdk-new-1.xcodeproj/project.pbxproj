@@ -164,6 +164,8 @@
 		1EEB01B272B4243786A35370 /* QRCodeResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB08AB829A83C5228F8E92 /* QRCodeResp.swift */; };
 		1EEB02D0B97CB07FCAA3E47F /* QRAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB09EDDFFC9529F521F8C5 /* QRAlert.swift */; };
 		1EEB034A88EE62FC9C851640 /* QRPaylaterMauCashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB081A913291C3E91935F2 /* QRPaylaterMauCashModel.swift */; };
+		1EEB0675D08710B6E95142C7 /* QRTransactionClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB0EB8D4468DA663FE2AA2 /* QRTransactionClient.swift */; };
+		1EEB06B4F80A63B254BA5032 /* QRBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB0160EFF3C6DFDD222679 /* QRBalance.swift */; };
 		1EEB093858C59FBBE3264167 /* QRAPPopUpErrorVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EEB0AFF76CC387CA11ABCB3 /* QRAPPopUpErrorVC.xib */; };
 		1EEB0A406BC9BE7F77D33BEC /* QRAPPopUpErrorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB0AFE3AC2B8524C098705 /* QRAPPopUpErrorVC.swift */; };
 		1EEB0BCB1C1FEA230860879E /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB026D1898173C2CF83030 /* UIApplicationExtension.swift */; };
@@ -343,6 +345,7 @@
 		0D1A815C27E1C1F3007B5984 /* BarlowExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BarlowExtraBold.ttf; sourceTree = "<group>"; };
 		0D1A815D27E1C1F3007B5984 /* BarlowThin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BarlowThin.ttf; sourceTree = "<group>"; };
 		0D1A815F27E1C1F3007B5984 /* CacheAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheAuthentication.swift; sourceTree = "<group>"; };
+		1EEB0160EFF3C6DFDD222679 /* QRBalance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRBalance.swift; sourceTree = "<group>"; };
 		1EEB026D1898173C2CF83030 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		1EEB081A913291C3E91935F2 /* QRPaylaterMauCashModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRPaylaterMauCashModel.swift; sourceTree = "<group>"; };
 		1EEB08AB829A83C5228F8E92 /* QRCodeResp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeResp.swift; sourceTree = "<group>"; };
@@ -350,6 +353,7 @@
 		1EEB09FC4F5040AC88115D94 /* QRErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRErrorResponse.swift; sourceTree = "<group>"; };
 		1EEB0AFE3AC2B8524C098705 /* QRAPPopUpErrorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRAPPopUpErrorVC.swift; sourceTree = "<group>"; };
 		1EEB0AFF76CC387CA11ABCB3 /* QRAPPopUpErrorVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRAPPopUpErrorVC.xib; sourceTree = "<group>"; };
+		1EEB0EB8D4468DA663FE2AA2 /* QRTransactionClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRTransactionClient.swift; sourceTree = "<group>"; };
 		2DD450093199B934814F870C /* QRLoadingStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRLoadingStateView.swift; sourceTree = "<group>"; };
 		2DD45328565C695ADB0195F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		2DD453CBE14CBDAC068DE88E /* QRLottieAnimationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRLottieAnimationView.xib; sourceTree = "<group>"; };
@@ -916,6 +920,7 @@
 				0D1A810227E1C1F3007B5984 /* Dto */,
 				0D1A811527E1C1F3007B5984 /* QRPaylaterClient.swift */,
 				0D1A811627E1C1F3007B5984 /* QRClient.swift */,
+				1EEB0EB8D4468DA663FE2AA2 /* QRTransactionClient.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -929,6 +934,7 @@
 				0D1A810E27E1C1F3007B5984 /* ErrorResponse */,
 				0D1A811027E1C1F3007B5984 /* Paylater */,
 				0D1A811327E1C1F3007B5984 /* QrGeneralDto */,
+				1EEB0F498511D14C8B27691F /* Balance */,
 			);
 			path = Dto;
 			sourceTree = "<group>";
@@ -1204,6 +1210,14 @@
 				1EEB09EDDFFC9529F521F8C5 /* QRAlert.swift */,
 			);
 			path = QRAlert;
+			sourceTree = "<group>";
+		};
+		1EEB0F498511D14C8B27691F /* Balance */ = {
+			isa = PBXGroup;
+			children = (
+				1EEB0160EFF3C6DFDD222679 /* QRBalance.swift */,
+			);
+			path = Balance;
 			sourceTree = "<group>";
 		};
 		2DD4503B6DAD4F09B47B0590 /* Base.lproj */ = {
@@ -1593,6 +1607,8 @@
 				1EEB0E4C2BD274C2C2D4F9AD /* QRErrorResponse.swift in Sources */,
 				2DD456A6F010F188DBF1D68F /* HomeRouter.swift in Sources */,
 				2DD4583CD2AADC9531A4BA37 /* HomeVC.swift in Sources */,
+				1EEB0675D08710B6E95142C7 /* QRTransactionClient.swift in Sources */,
+				1EEB06B4F80A63B254BA5032 /* QRBalance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

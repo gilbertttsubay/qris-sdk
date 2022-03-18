@@ -15,6 +15,7 @@ protocol QRDetailPaymentTVCellAstrapayProtocolSDK{
 
 protocol QRDetailPaymentTVCellAstrapayProtocol {
     func didAstrapayCellReloaded(userBalance: Int)
+//    func didAstrapayBalanceIsNotEnough()
 }
 
 
@@ -48,10 +49,10 @@ class QRDetailPaymentTVCellAstrapay: UITableViewCell {
 
 
     //ini belum tau delegatenya bener apa ga?
-        self.balanceLabel.text = self.delegateSDK?.getUserBalance() ?? "Rp 0"
 //        self.balanceLabel.text = Prefs.getUser()?.balance?.toIDRQR() ?? "Rp 0"
         self.informationLabel.text = content.information
         self.selectedPaymentImage.image = UIImage(named: self.nameSelectedImage)
+        self.selectedPaymentImage.isHidden = true
 
         self.paymentNameLabel.font = UIFont.setupFont(size: 14)
         self.balanceLabel.font = UIFont.setupFont(size: 14)
@@ -69,8 +70,8 @@ class QRDetailPaymentTVCellAstrapay: UITableViewCell {
 //        var userBalance: Int = Int(Prefs.getUser()?.balance ?? 0)
         var userBalance: Int = Int(self.delegateSDK?.getUserBalance() ?? "0") ?? 0
 
-        self.delegate?.didAstrapayCellReloaded(userBalance: userBalance)
         self.viewModel.initVM(content: content, userBalance:  userBalance)
+        self.viewModel.setupViewLogic()
 
     }
     func setupProtocol(){
@@ -94,20 +95,25 @@ class QRDetailPaymentTVCellAstrapay: UITableViewCell {
 }
 
 extension QRDetailPaymentTVCellAstrapay: QRDetailPaymentTVCellAstrapayViewModelProtocol {
-    func didUserBalanceIsNotEnoughCompareToAmount(){
+    func didUserBalanceIsNotEnoughCompareToAmount(userBalance: Int){
         DispatchQueue.main.async(execute: {
+            self.balanceLabel.text = userBalance.toIDRQR()
             self.informationLabel.text = "Saldo tidak cukup"
             self.informationLabel.textColor = QRBaseColor.red
             self.selectedPaymentImage.isHidden = true
             self.isUserInteractionEnabled = false
+//            self,delegate?.didAstrapayBalanceIsNotEnough()
         })
 
     }
-    func didUserBalanceIsEnoughCompareToAmount(){
+    func didUserBalanceIsEnoughCompareToAmount(userBalance: Int){
         DispatchQueue.main.async {
+            self.balanceLabel.text = userBalance.toIDRQR()
             self.informationLabel.isHidden = true
-            self.selectedPaymentImage.isHidden = false
+//            self.selectedPaymentImage.isHidden = false
             self.isUserInteractionEnabled = true
+            self.delegate?.didAstrapayCellReloaded(userBalance: userBalance)
+
         }
     }
 }

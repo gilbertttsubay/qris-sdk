@@ -114,7 +114,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZe-Mm-Zgm" userLabel="View Keyboard" customClass="QRInputKeyboardView" customModule="qris_sdk_new_1" customModuleProvider="target">
-                            <rect key="frame" x="30" y="176.5" width="314" height="493.5"/>
+                            <rect key="frame" x="30" y="321" width="314" height="349"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VgB-2O-tCV" userLabel="View Button" customClass="QRAPButtonAtom" customModule="qris_sdk_new_1" customModuleProvider="target">
@@ -125,7 +125,7 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ Tips Rp 200 (05.00%)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNL-Ze-uTr">
-                            <rect key="frame" x="0.0" y="138" width="183" height="20.5"/>
+                            <rect key="frame" x="0.0" y="138" width="183" height="165"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>

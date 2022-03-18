@@ -284,11 +284,11 @@ extension QRClient{
                     if let responseSuccessPostOtp = responseSuccessPostOtp{
                         if responseSuccessPostOtp.id != nil {
                             completion(QRResponse(status: true, message: "OK", data:responseSuccessPostOtp, errorData: nil))
-                            print("success resendOtp: \(responseSuccessPostOtp)")
+                            print("success post to transaction otp: \(responseSuccessPostOtp)")
                         }
                     }
                     let responseErrorPostOtp = try? JSONDecoder().decode(AstrapayErrorResponse.self, from: responseJson!)
-                    print("Error resendOtp: \(responseErrorPostOtp)")
+                    print("Error post to transaction otp: \(responseErrorPostOtp)")
                     if let responseErrorPostOtp = responseErrorPostOtp{
                         completion(QRResponse(status: false, message: response.error?.errorDescription ?? "-", data:nil, errorData: responseErrorPostOtp))
                     }

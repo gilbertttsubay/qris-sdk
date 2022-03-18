@@ -201,7 +201,6 @@ extension QRSelectPaymentView {
         self.viewModel.cellAstrapay = cell
         cell.delegate = self
         cell.setupView(content: self.contentView[indexPath.row])
-        cell.showSeletedPaymentImage()
 
         if self.contentView[indexPath.row].statusRegisterPLMC == "Aktifkan" {
 

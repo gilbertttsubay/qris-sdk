@@ -6,8 +6,8 @@
 import Foundation
 
 protocol QRDetailPaymentTVCellAstrapayViewModelProtocol{
-    func didUserBalanceIsNotEnoughCompareToAmount()
-    func didUserBalanceIsEnoughCompareToAmount()
+    func didUserBalanceIsNotEnoughCompareToAmount(userBalance: Int)
+    func didUserBalanceIsEnoughCompareToAmount(userBalance: Int)
 
 }
 
@@ -16,13 +16,15 @@ class QRDetailPaymentTVCellAstrapayViewModel{
     var content = QRSelectPaymentViewPayload()
     var userBalance = 0
 
+    private var qrTransactionClient = QRTransactionClient()
+
+
     var delegate: QRDetailPaymentTVCellAstrapayViewModelProtocol?
 
     func initVM(content: QRSelectPaymentViewPayload, userBalance: Int){
         self.content = content
         self.userBalance = userBalance
 
-        setupViewLogic()
     }
 
 
@@ -37,17 +39,30 @@ extension QRDetailPaymentTVCellAstrapayViewModel{
        3. jika loading terlalu lama*/
     func setupViewLogic(){
 
-        guard let basicPrice = content.basicPrice else {
-            return
-        }
-        guard let amountTransaction = content.amountTransaction else {
-            return
-        }
-        if userBalance < basicPrice || userBalance < amountTransaction {
-            self.delegate?.didUserBalanceIsNotEnoughCompareToAmount()
-            return
-        }
-        self.delegate?.didUserBalanceIsEnoughCompareToAmount()
-        return
+            self.qrTransactionClient.getTransactionBalance(completion: {
+                (result) in
+                guard let basicPrice = self.content.basicPrice else {
+                    return
+                }
+                guard let amountTransaction = self.content.amountTransaction else {
+                    return
+                }
+
+                switch result.status {
+                case true:
+                    self.userBalance = Int(result.data?.balance ?? 0)
+                    if self.userBalance < basicPrice || self.userBalance < amountTransaction {
+                        self.delegate?.didUserBalanceIsNotEnoughCompareToAmount(userBalance: self.userBalance)
+                        return
+                    }
+                    self.delegate?.didUserBalanceIsEnoughCompareToAmount(userBalance: self.userBalance)
+                    return
+
+                case false:
+                    print("nothing")
+                }
+
+
+            })
     }
 }
