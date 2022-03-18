@@ -24,7 +24,8 @@ target 'qris-sdk-new-1' do
   pod 'AppsFlyerFramework'
   pod 'lottie-ios'
   pod 'Alamofire'
-  pod 'SDWebImage'
+  # pod 'SDWebImage'
+  pod 'SkeletonView'
 
   #guntur
   pod 'TTSegmentedControl', '~>0.4.9'

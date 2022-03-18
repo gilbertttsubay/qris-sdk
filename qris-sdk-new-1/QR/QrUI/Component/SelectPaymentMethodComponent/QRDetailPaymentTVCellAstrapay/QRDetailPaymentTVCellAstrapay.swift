@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 protocol QRDetailPaymentTVCellAstrapayProtocolSDK{
     func getUserBalance() -> String
@@ -43,13 +44,16 @@ class QRDetailPaymentTVCellAstrapay: UITableViewCell {
 
     func setupView(content: QRSelectPaymentViewPayload) {
         self.viewModel.initVM(content: content)
-        self.isHidden = true
+//        self.isHidden = true
+
+    self.isUserInteractionEnabled = false
+        self.setupActivationSkeleton()
+        self.setupSkeletonView()
 
 
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.3, execute: {
             self.viewModel.setupViewLogic()
-        }
-
+        })
 
         self.paymentImage.image = UIImage(named: self.paymentImageName)
         self.paymentNameLabel.text = self.paymentName
@@ -59,8 +63,9 @@ class QRDetailPaymentTVCellAstrapay: UITableViewCell {
     //ini belum tau delegatenya bener apa ga?
 //        self.balanceLabel.text = Prefs.getUser()?.balance?.toIDRQR() ?? "Rp 0"
         self.informationLabel.text = content.information
+        self.informationLabel.isHidden = true
         self.selectedPaymentImage.image = UIImage(named: self.nameSelectedImage)
-        self.selectedPaymentImage.isHidden = true
+//        self.selectedPaymentImage.isHidden = true
 
         self.paymentNameLabel.font = UIFont.setupFont(size: 14)
         self.balanceLabel.font = UIFont.setupFont(size: 14)
@@ -83,6 +88,30 @@ class QRDetailPaymentTVCellAstrapay: UITableViewCell {
     }
     func setupProtocol(){
         self.viewModel.delegate = self
+    }
+
+    func setupActivationSkeleton(){
+        self.paymentImage.isSkeletonable = true
+        self.paymentNameLabel.isSkeletonable = true
+        self.balanceLabel.isSkeletonable = true
+        self.selectedPaymentImage.isSkeletonable = true
+    }
+
+    func disableSkelecton(){
+        self.paymentImage.hideSkeleton()
+        self.paymentNameLabel.hideSkeleton()
+        self.balanceLabel.hideSkeleton()
+        self.selectedPaymentImage.hideSkeleton()
+    }
+
+    func setupSkeletonView(){
+        self.paymentImage.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: QRBaseColor.QRProperties.baseDisabledColor))
+        self.paymentNameLabel.skeletonPaddingInsets = UIEdgeInsets(top: 0,left: 0, bottom: 0, right: -100)
+        self.paymentNameLabel.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: QRBaseColor.QRProperties.baseDisabledColor))
+
+        self.balanceLabel.skeletonPaddingInsets = UIEdgeInsets(top: 0,left: 0, bottom: 0, right: -100)
+        self.balanceLabel.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: QRBaseColor.QRProperties.baseDisabledColor))
+        self.selectedPaymentImage.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: QRBaseColor.QRProperties.baseDisabledColor))
     }
     //MARK: 2 fungsi ini dipake di QRPLMCDetailPaymentView, bukan disini
     func showSeletedPaymentImage() {
@@ -107,10 +136,12 @@ extension QRDetailPaymentTVCellAstrapay: QRDetailPaymentTVCellAstrapayViewModelP
             self.balanceLabel.text = userBalance.toIDRQR()
             self.informationLabel.text = "Saldo tidak cukup"
             self.informationLabel.textColor = QRBaseColor.red
+            self.informationLabel.isHidden = false
             self.selectedPaymentImage.isHidden = true
             self.isUserInteractionEnabled = false
 //            self,delegate?.didAstrapayBalanceIsNotEnough()
         self.isHidden = false
+            self.disableSkelecton()
         })
 
     }
@@ -118,10 +149,12 @@ extension QRDetailPaymentTVCellAstrapay: QRDetailPaymentTVCellAstrapayViewModelP
         DispatchQueue.main.async {
             self.balanceLabel.text = userBalance.toIDRQR()
             self.informationLabel.isHidden = true
-//            self.selectedPaymentImage.isHidden = false
+            self.selectedPaymentImage.isHidden = true
             self.isUserInteractionEnabled = true
             self.isHidden = false
             self.delegate?.didAstrapayCellReloaded(userBalance: userBalance)
+            self.disableSkelecton()
+
 
         }
     }

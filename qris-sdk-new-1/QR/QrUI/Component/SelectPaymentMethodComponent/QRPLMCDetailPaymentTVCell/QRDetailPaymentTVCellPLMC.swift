@@ -32,6 +32,15 @@ class QRDetailPaymentTVCellPLMC: UITableViewCell {
 
 
     func setupView(content: QRSelectPaymentViewPayload) {
+        self.setupActivationSkeleton()
+        self.setupSkeletonView()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.3, execute: {
+            self.vm.getInquiryPaylater(content: content)
+        })
+
+
+        self.isUserInteractionEnabled = false
         self.paymentImage.image = UIImage(named: self.paymentImageName)
         self.paymentNameLabel.text = self.paymentName
 
@@ -52,11 +61,10 @@ class QRDetailPaymentTVCellPLMC: UITableViewCell {
         self.containerView.layer.borderColor = QRBaseColor.QRProperties.baseDisabledColor.cgColor
         self.selectionStyle = .none
 
-        self.vm.getInquiryPaylater(content: content)
+
         if selectedPaymentImage.isHidden == false {
             selectedPaymentImage.isHidden = false
         }
-        self.isHidden = true
     }
     
     func showSeletedPaymentImage() {
@@ -76,6 +84,43 @@ class QRDetailPaymentTVCellPLMC: UITableViewCell {
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+
+    func setupActivationSkeleton(){
+        self.paymentImage.isSkeletonable = true
+        self.paymentNameLabel.isSkeletonable = true
+        self.balanceLabel.isSkeletonable = true
+        self.informationLabel.isSkeletonable = true
+        self.selectedPaymentImage.isSkeletonable = true
+        self.limitAmountLabel.isSkeletonable = true
+    }
+
+    func disableSkelecton(){
+        self.paymentImage.hideSkeleton()
+        self.paymentNameLabel.hideSkeleton()
+        self.balanceLabel.hideSkeleton()
+        self.selectedPaymentImage.hideSkeleton()
+        self.informationLabel.hideSkeleton()
+        self.limitAmountLabel.hideSkeleton()
+    }
+
+    func setupSkeletonView(){
+        self.paymentImage.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: QRBaseColor.QRProperties.baseDisabledColor))
+
+        self.paymentNameLabel.skeletonPaddingInsets = UIEdgeInsets(top: 0,left: 0, bottom: 0, right: -30)
+        self.paymentNameLabel.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: QRBaseColor.QRProperties.baseDisabledColor))
+
+        self.balanceLabel.skeletonPaddingInsets = UIEdgeInsets(top: 0,left: 0, bottom: 0, right: -30)
+        self.balanceLabel.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: QRBaseColor.QRProperties.baseDisabledColor))
+
+        self.informationLabel.skeletonPaddingInsets = UIEdgeInsets(top: 0,left: 0, bottom: 0, right: -30)
+        self.informationLabel.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: QRBaseColor.QRProperties.baseDisabledColor))
+
+        self.limitAmountLabel.skeletonPaddingInsets = UIEdgeInsets(top: 0,left: 0, bottom: 0, right: -30)
+        self.limitAmountLabel.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: QRBaseColor.QRProperties.baseDisabledColor))
+
+
+        self.selectedPaymentImage.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: QRBaseColor.QRProperties.baseDisabledColor))
     }
 }
 
@@ -100,6 +145,7 @@ extension QRDetailPaymentTVCellPLMC: QRPLMCDetailPaymentTVCellViewModelProtocol 
            self.limitAmountLabel.isHidden = true
            self.selectedPaymentImage.isHidden = true
            self.isUserInteractionEnabled = true
+           self.disableSkelecton()
        }
     }
 
@@ -111,6 +157,7 @@ extension QRDetailPaymentTVCellPLMC: QRPLMCDetailPaymentTVCellViewModelProtocol 
             self.limitAmountLabel.textColor = QRBaseColor.red
             self.selectedPaymentImage.isHidden = true
             self.isUserInteractionEnabled = false
+            self.disableSkelecton()
         }
     }
 

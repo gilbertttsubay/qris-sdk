@@ -198,11 +198,9 @@ PODS:
   - Neumann (1.2.0)
   - PromisesObjC (2.0.0)
   - RxSwift (6.5.0)
-  - SDWebImage (5.12.5):
-    - SDWebImage/Core (= 5.12.5)
-  - SDWebImage/Core (5.12.5)
   - Sejima (2.0.0):
     - Neumann
+  - SkeletonView (1.29.2)
   - SVProgressHUD (2.2.5)
   - TTSegmentedControl (0.4.10)
 
@@ -223,8 +221,8 @@ DEPENDENCIES:
   - MOGeofence (~> 3.0.1)
   - MYPassthrough
   - RxSwift
-  - SDWebImage
   - Sejima
+  - SkeletonView
   - SVProgressHUD
   - TTSegmentedControl (~> 0.4.9)
 
@@ -259,8 +257,8 @@ SPEC REPOS:
     - Neumann
     - PromisesObjC
     - RxSwift
-    - SDWebImage
     - Sejima
+    - SkeletonView
     - SVProgressHUD
     - TTSegmentedControl
 
@@ -294,11 +292,11 @@ SPEC CHECKSUMS:
   Neumann: 9ce57ac4a26916c47f079e213a442558f2437cf4
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
-  SDWebImage: 0905f1b7760fc8ac4198cae0036600d67478751e
   Sejima: e76713557f5f6b7ec4f1934ea02fda755775a3b4
+  SkeletonView: 915a80ecc2b6421ab7ac0f0212321c0cc1406472
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TTSegmentedControl: d8005c0cdca2549ade0aee8e09240723e2478a6a
 
-PODFILE CHECKSUM: 9d2af528d775c45256e8f9c5729580a0d983c842
+PODFILE CHECKSUM: acd83dea90771b6edce185b2ffe3cbe28fb9f600
 
 COCOAPODS: 1.11.2
