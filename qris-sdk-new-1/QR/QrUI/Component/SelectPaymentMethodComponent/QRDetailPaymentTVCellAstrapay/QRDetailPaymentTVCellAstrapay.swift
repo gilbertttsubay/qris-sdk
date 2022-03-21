@@ -159,7 +159,7 @@ extension QRDetailPaymentTVCellAstrapay: QRDetailPaymentTVCellAstrapayViewModelP
 
     func didUserBalanceGetTimeOut(){
         DispatchQueue.main.async(execute: {
-            self.balanceLabel.removeFromSuperview()
+            self.balanceLabel.isHidden = true
             self.informationLabel.text = "Maaf terjadi gangguan"
             self.informationLabel.textColor = QRBaseColor.black
             self.informationLabel.isHidden = false
