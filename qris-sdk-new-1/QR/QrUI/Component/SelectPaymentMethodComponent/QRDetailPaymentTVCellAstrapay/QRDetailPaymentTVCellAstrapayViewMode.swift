@@ -9,6 +9,8 @@ protocol QRDetailPaymentTVCellAstrapayViewModelProtocol{
     func didUserBalanceIsNotEnoughCompareToAmount(userBalance: Int)
     func didUserBalanceIsEnoughCompareToAmount(userBalance: Int)
 
+    func didUserBalanceGetTimeOut()
+
 }
 
 class QRDetailPaymentTVCellAstrapayViewModel{
@@ -58,7 +60,13 @@ extension QRDetailPaymentTVCellAstrapayViewModel{
                     return
 
                 case false:
-                    print("nothing")
+                    if let isTimeOut = result.isTimeOut{
+                        if isTimeOut{
+                            self.delegate?.didUserBalanceGetTimeOut()
+                            return
+
+                        }
+                    }
                 }
 
 

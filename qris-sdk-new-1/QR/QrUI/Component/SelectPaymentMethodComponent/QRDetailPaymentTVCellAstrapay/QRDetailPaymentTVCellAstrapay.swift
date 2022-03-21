@@ -154,9 +154,22 @@ extension QRDetailPaymentTVCellAstrapay: QRDetailPaymentTVCellAstrapayViewModelP
             self.isHidden = false
             self.delegate?.didAstrapayCellReloaded(userBalance: userBalance)
             self.disableSkelecton()
-
-
         }
+    }
+
+    func didUserBalanceGetTimeOut(){
+        DispatchQueue.main.async(execute: {
+            self.balanceLabel.removeFromSuperview()
+            self.informationLabel.text = "Maaf terjadi gangguan"
+            self.informationLabel.textColor = QRBaseColor.black
+            self.informationLabel.isHidden = false
+            self.selectedPaymentImage.isHidden = true
+            self.isUserInteractionEnabled = false
+//            self,delegate?.didAstrapayBalanceIsNotEnough()
+            self.isHidden = false
+            self.disableSkelecton()
+        })
+
     }
 }
 

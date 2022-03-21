@@ -339,6 +339,10 @@ extension QRPLMaucashQrisLoanTrxVM{
                         return
                     }
 
+                    if code == "OTP-REQUEST-LOCK" {
+                        self.delegate?.didFailedResendOtpBecauseOtpRequestLimitExceeded()
+                    }
+
                     if code == "OTP-EXPIRED"{
                         self.delegate?.didFailedPostToTransactionOtpBecauseOtpExpired()
                         return

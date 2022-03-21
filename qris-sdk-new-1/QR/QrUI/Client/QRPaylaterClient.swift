@@ -59,19 +59,57 @@ extension QRPaylaterClient{
         let getInquiryPaylaterUrl: String = "\(urlBaseQrisService)/inquiries/\(requestTransactionToken)/paymentMethods/payLater?amount=\(requestBasicAmount)"
         var header = self.constructHeaderGeneral()
 
-        let request = AF.request(getInquiryPaylaterUrl, method: .get, parameters: nil, encoding: URLEncoding.default, headers: header)
-                .responseDecodable(of: QRPaylaterResponseDto.self) {
+        let request = AF.request(getInquiryPaylaterUrl, method: .get, parameters: nil, encoding: URLEncoding.default, headers: header){$0.timeoutInterval = 60}
+                .responseJSON(completionHandler: {
                     response in
 
                     debugPrint(response)
 
-                    switch response.result {
+                    debugPrint(response)
+
+                    switch response.result{
+                    case .success(let value):
+
+                        var responseResult = try? response.result.get()
+                        var resultDictionary = responseResult as! Dictionary<String, Any>
+                        print(resultDictionary.jsonStringRepresentation)
+                        var dictString = resultDictionary.jsonStringRepresentation
+
+                        if let dictString = dictString{
+                            var responseJson = dictString.data(using: .utf8)
+                            let responseSuccessGetBalance = try? JSONDecoder().decode(QRPaylaterResponseDto.self, from: responseJson!)
+                            if let responseSuccessGetBalance = responseSuccessGetBalance{
+                                completion(QRResponse(status: true, message: "OK", data:responseSuccessGetBalance, errorData: nil))
+                                print("success get inquiry paylater: \(responseSuccessGetBalance)")
+                            }
+                            let responseErrorGetBalance = try? JSONDecoder().decode(AstrapayErrorResponse.self, from: responseJson!)
+                            print("error get inquiry paylater: \(responseErrorGetBalance)")
+                            if let responseErrorGetBalance = responseErrorGetBalance{
+                                completion(QRResponse(status: false, message: response.error?.errorDescription ?? "-", data:nil, errorData: responseErrorGetBalance))
+                            }
+                        }
+
+
                     case .failure(let error):
-                        completion(QRResponse(status: false, message: error.localizedDescription, data: nil))
-                    case .success(let data):
-                        completion(QRResponse(status: true, message: "OK", data: data))
+                        var errorCode = error._code
+                        if errorCode == QRErrorConstant.TIMEOUT_ERROR_CODE {
+                            completion(QRResponse(status: false, message: response.error?.errorDescription ?? "-", data: nil, errorData: nil, isTimeOut: true))
+                            break
+                        }
+
+                        switch response.response?.statusCode {
+                        case 401:
+                            completion(QRResponse(status: false, message: response.error?.errorDescription ?? "-", data:nil, errorData: nil, isTimeOut: false,responseCode: response.response?.statusCode))
+                            break
+                        case .none:
+                            completion(QRResponse(status: false, message: "-", data: nil, isTimeOut: false, responseCode: nil))
+                            break
+                        case .some(_):
+                            completion(QRResponse(status: false, message: "-", data: nil, isTimeOut: false, responseCode: nil))
+                            break
+                        }
                     }
-                }
+                })
         return request
     }
 }

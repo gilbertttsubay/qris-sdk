@@ -6,11 +6,20 @@
 import Foundation
 
 protocol QRPLMCDetailPaymentTVCellViewModelProtocol {
+
+    //error casuel
     func didFailedGetInquiryResponse()
+
+    //error timeout
+    func didFailedGetInquiryResponseBecauseOfTimeOut()
+
+
     func didSuccessGetInquiryResponseEmptyList()
     func didSuccessGetInquiryResponseWithList(listPaylater: [Content])
 
     func didSuccessGetInquiryButAmountIsNotEnough(limit: Int)
+
+
 }
 
 
@@ -33,6 +42,12 @@ class QRPLMCDetailPaymentTVCellViewModel {
         self.qrPaylaterClient.getInquiryPaylater(requestTransactionToken: content.qrInquiryDtoViewData?.transactionToken ?? "-", requestBasicAmount: String(content.basicPrice ?? 0)) { result in
             switch result.status{
             case false:
+                if let isTimeOut = result.isTimeOut {
+                    if isTimeOut {
+                        self.delegate?.didFailedGetInquiryResponseBecauseOfTimeOut()
+                        return
+                    }
+                }
                 self.delegate?.didFailedGetInquiryResponse()
             case true:
                 guard let listPaylater = result.data?.content else {

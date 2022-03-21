@@ -161,4 +161,17 @@ extension QRDetailPaymentTVCellPLMC: QRPLMCDetailPaymentTVCellViewModelProtocol 
         }
     }
 
+    func didFailedGetInquiryResponseBecauseOfTimeOut(){
+        DispatchQueue.main.async {
+            self.balanceLabel.text = "-"
+            self.limitAmountLabel.isHidden = false
+            self.limitAmountLabel.textColor = QRBaseColor.red
+            self.limitAmountLabel.text = "Maaf terjadi gangguan"
+            self.selectedPaymentImage.isHidden = true
+            self.isUserInteractionEnabled = false
+            self.alpha = 0.6
+            self.disableSkelecton()
+        }
+    }
+
 }

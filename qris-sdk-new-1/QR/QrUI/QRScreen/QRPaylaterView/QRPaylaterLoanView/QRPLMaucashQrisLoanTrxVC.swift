@@ -354,8 +354,8 @@ extension QRPLMaucashQrisLoanTrxVC : QRPLMaucashQrisLoanTrxVMProtocol {
             self.stateLoadingQR(state: .dismiss)
             var qrPopUpPayload = QRPopUpPayload(
                     imageName: VCProperty.imagePinName,
-                    titleText: "Mohon Maaf",
-                    subtitleLableText: "Kamu sudah 3 kali kirim OTP. Coba kembali setelah 5 menit.",
+                    titleText: "OTP Masih Salah",
+                    subtitleLableText: "Kamu sudah melewati batas 3 kali salah OTP. Coba kembali setelah 5 menit.",
                     titleButton: "OK")
             self.qrPopUp.initQRPopUP(qrPopUpPayload: qrPopUpPayload)
             self.qrPopUp.delegate = self
