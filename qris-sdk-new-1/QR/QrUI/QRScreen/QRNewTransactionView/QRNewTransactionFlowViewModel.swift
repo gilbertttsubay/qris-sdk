@@ -185,11 +185,16 @@ extension QRNewTransactionFlowViewModel{
 extension QRNewTransactionFlowViewModel {
     func getQRMerchantInfoTvCellPayload() -> QRMerchantInfoCellPayload{
         var qrMerchantInfoCellPayload = QRMerchantInfoCellPayload(
-                nameMerchant: "",
-                lokasi: "",
+                nameMerchant: "Unknown",
+                lokasi: "Unknown",
                 isUseDate: false,
                 isBuyTo: false,
-                date: "")
+                date: "2000-01-01 00:00:00")
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "id")
+        dateFormatter.dateFormat = "dd MMMM YYYY - HH:mm:ss"
+        let newFormatter = ISO8601DateFormatter()
+
         //MARK: Fatal harus di hilangin nanti ini hanya untuk sebagai informan
         guard let qrInquiryDtoViewData = self.qrInquiryDtoViewData else {
             fatalError("qr inquiry is null")
@@ -206,10 +211,13 @@ extension QRNewTransactionFlowViewModel {
         guard let merchantCity = merchant.merchantCity else {
             fatalError("merchant city is null")
         }
-        guard let createdAt = qrInquiryDtoViewData.createdAt else {
-            fatalError("created at is null")
+        guard let date = qrInquiryDtoViewData.createdAt else {
+            fatalError("There is a problem when parsing the date")
         }
-        qrMerchantInfoCellPayload = QRMerchantInfoCellPayload(nameMerchant: merchantName, lokasi: merchantCity ,isUseDate: true, isBuyTo: false, date: createdAt)
+        
+        let createdAt = dateFormatter.string(from: newFormatter.date(from: date) ?? Date())
+        
+        qrMerchantInfoCellPayload = QRMerchantInfoCellPayload(nameMerchant: merchantName, lokasi: merchantCity ,isUseDate: true, isBuyTo: false, date: "\(createdAt) WIB")
     return qrMerchantInfoCellPayload
     }
 }

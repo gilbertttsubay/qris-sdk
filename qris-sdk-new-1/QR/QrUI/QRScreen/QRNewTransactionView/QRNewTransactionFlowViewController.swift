@@ -39,7 +39,7 @@ class QRNewTransactionFlowViewController: UIViewController {
         static let heightOfDetailPaymentCell : CGFloat = QRDetailPaymentTvCell.heightOfCell
         static let heightOfNominalTransaction : CGFloat = QRNominalTransactionTvCell.heightOfCell
         var btnTitle : String = "BAYAR"
-        static let navigationTitle = "Bayar"
+        static let navigationTitle = "Secure payment with Astrapay"
         static let defaultCurrency = "Rp. 0"
         static let constantHeightPopUp = 360
         static let heightPopUpOTP = 380
@@ -86,7 +86,7 @@ class QRNewTransactionFlowViewController: UIViewController {
 
 
     override func viewWillAppear(_ animated: Bool) {
-        self.setTextNavigationQR(theme: .normal, title: VCProperty.navigationTitle, navigator: .back, navigatorCallback: nil)
+        self.setTextNavigationQR(theme: .BlueBase, title: VCProperty.navigationTitle, navigator: .back, navigatorCallback: nil)
         self.tableView.reloadData()
         self.setupAction()
         self.viewModel.isPaylater = false

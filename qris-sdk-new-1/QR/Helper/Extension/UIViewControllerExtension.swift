@@ -52,7 +52,10 @@ extension UIViewController {
             case .Transparent:
                 return UIColor.clear
             case .BlueBase:
-                return QRBaseColor.QRProperties.baseColor//UIColor(string: "#0476bf")
+                return QRBaseColor.QRProperties.blueAstra//UIColor(string: "#0476bf")
+//            case .Test:
+//                return
+                    
             }
         }
         
@@ -228,13 +231,27 @@ extension UIViewController {
         }
     }
 
-    func setTextNavigationQR(theme: NavigationTheme = .normal, title: String, navigator: ViewNavigatorType = .none, navigatorCallback: Selector? = nil) {
+    func setTextNavigationQR(theme: NavigationTheme, title: String, navigator: ViewNavigatorType = .none, navigatorCallback: Selector? = nil) {
         self.setupTitleNavigation(theme: theme, title: title)
         self.setupNavigatorNavigation(theme: theme, type: navigator, navigatorCallback: navigatorCallback)
         self.setupBackgroundNavigation(theme: theme)
     }
     
     private func setupTitleNavigation(theme: NavigationTheme, title: String) {
+        let navView = UIView()
+        // Create the label
+        let label = UILabel()
+        label.text = title
+        label.sizeToFit()
+        label.textColor = .white
+        label.center = navView.center
+        label.textAlignment = NSTextAlignment.center
+        navView.addSubview(label)
+        
+        self.navigationItem.titleView = navView
+        // Set the navView's frame to fit within the titleView
+        navView.sizeToFit()
+        
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         self.navigationController?.navigationItem.backBarButtonItem?.isEnabled = true
@@ -256,11 +273,17 @@ extension UIViewController {
         self.navigationController?.navigationBar.barTintColor = theme.primaryColor(on: self)
         
         switch theme {
-        case .normal, .BlueBase:
+        case .normal:
             self.navigationController?.navigationBar.isTranslucent = false
+
             self.navigationController?.navigationBar.backgroundColor = .white
             self.navigationController?.view.backgroundColor = .white
             self.navigationController?.navigationBar.barTintColor = .white
+        case .BlueBase:
+            self.navigationController?.navigationBar.isTranslucent = false
+            self.navigationController?.navigationBar.backgroundColor = QRBaseColor.QRProperties.blueAstra
+            self.navigationController?.view.backgroundColor = QRBaseColor.QRProperties.blueAstra
+            self.navigationController?.navigationBar.barTintColor = QRBaseColor.QRProperties.blueAstra
         case .Transparent:
             self.navigationController?.navigationBar.setBackgroundImage (UIImage(), for: .default) //UIImage.init(named: "transparent.png")
             self.navigationController?.navigationBar.shadowImage = UIImage()

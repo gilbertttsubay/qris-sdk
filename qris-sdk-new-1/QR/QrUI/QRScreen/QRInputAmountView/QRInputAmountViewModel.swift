@@ -30,7 +30,7 @@ struct QRInputAmountViewModel{
     }
 
     var createdAt: String {
-        return self.qrInquiryDtoViewData?.createdAt ?? "-"
+        return dateFormatter(self.qrInquiryDtoViewData?.createdAt ?? "-")
     }
 
 
@@ -60,7 +60,14 @@ struct QRInputAmountViewModel{
     func amountMoreThanMaximumAmount(amountInputed: Double, maximumAmount: Int?){
         if Int(amountInputed) > maximumAmount! {
             self.delegate?.amountMoreThanMaximumAmountIsTrue()
-//            self.setupPopUp()
         }
+    }
+    
+    func dateFormatter(_ initialDate: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "id")
+        dateFormatter.dateFormat = "dd MMMM YYYY - HH:mm:ss"
+        let newFormatter = ISO8601DateFormatter()
+        return "\(dateFormatter.string(from: newFormatter.date(from: initialDate) ?? Date())) WIB"
     }
 }

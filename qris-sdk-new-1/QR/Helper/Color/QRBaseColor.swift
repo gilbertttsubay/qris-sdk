@@ -15,7 +15,7 @@ class QRBaseColor: UIColor {
         static let baseColor : UIColor = UIColor(hexString: "#0045e5")
         static let blackColor = UIColor.black
         static let dandelion : UIColor = UIColor(hexString: "#eee809")
-        
+        static let blueAstra : UIColor = UIColor(hexString: "#104BDD")
         static let baseEnabledTitleColor : UIColor = UIColor(hexString: "#333333")
         static let baseEnabledYellowColor : UIColor = UIColor(hexString: "#eee809")
         
