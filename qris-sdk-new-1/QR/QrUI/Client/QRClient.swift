@@ -14,7 +14,6 @@ public enum BuildMode{
 
 public protocol ClientProtocol {
     func getAuthToken() -> String
-    func getUserToken() -> String
     func getBuildMode() -> BuildMode
 }
 public struct QRClient {
@@ -33,20 +32,6 @@ public struct QRClient {
     }
 
     init(){
-
-        //MARK: ini harus di delegate ke luar
-//        switch (BuildModeEndpoint.buildMode){
-//        case .cygnus:
-//                urlBaseQrisService = QRConstant.QRIS_SIT_API
-//            break
-//        case .vega:
-//            urlBaseQrisService = QRConstant.QRIS_UAT_API
-//            break
-//        case .orion:
-//            urlBaseQrisService = "https://frontend-.astrapay.com/qris-service"
-//            break
-//
-//        }
 
     }
 

@@ -169,6 +169,7 @@
 		1EEB093858C59FBBE3264167 /* QRAPPopUpErrorVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EEB0AFF76CC387CA11ABCB3 /* QRAPPopUpErrorVC.xib */; };
 		1EEB0A406BC9BE7F77D33BEC /* QRAPPopUpErrorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB0AFE3AC2B8524C098705 /* QRAPPopUpErrorVC.swift */; };
 		1EEB0BCB1C1FEA230860879E /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB026D1898173C2CF83030 /* UIApplicationExtension.swift */; };
+		1EEB0D730049DA58EBA5009C /* QRProtocolSdk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB096BD4ADFD4268F834E5 /* QRProtocolSdk.swift */; };
 		1EEB0E4C2BD274C2C2D4F9AD /* QRErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB09FC4F5040AC88115D94 /* QRErrorResponse.swift */; };
 		2DD451678073CC79784E0185 /* QRLottieAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD45789DA501A76E487552D /* QRLottieAnimationView.swift */; };
 		2DD4519D4E71347624F87352 /* QRLottieAnimationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DD453CBE14CBDAC068DE88E /* QRLottieAnimationView.xib */; };
@@ -349,6 +350,7 @@
 		1EEB026D1898173C2CF83030 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		1EEB081A913291C3E91935F2 /* QRPaylaterMauCashModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRPaylaterMauCashModel.swift; sourceTree = "<group>"; };
 		1EEB08AB829A83C5228F8E92 /* QRCodeResp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeResp.swift; sourceTree = "<group>"; };
+		1EEB096BD4ADFD4268F834E5 /* QRProtocolSdk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRProtocolSdk.swift; sourceTree = "<group>"; };
 		1EEB09EDDFFC9529F521F8C5 /* QRAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRAlert.swift; sourceTree = "<group>"; };
 		1EEB09FC4F5040AC88115D94 /* QRErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRErrorResponse.swift; sourceTree = "<group>"; };
 		1EEB0AFE3AC2B8524C098705 /* QRAPPopUpErrorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRAPPopUpErrorVC.swift; sourceTree = "<group>"; };
@@ -425,6 +427,7 @@
 				0D1A811727E1C1F3007B5984 /* Model */,
 				0D1A811927E1C1F3007B5984 /* scan.json */,
 				0D1A811A27E1C1F3007B5984 /* Helper */,
+				1EEB0DFE7902F17590836281 /* Protocol */,
 			);
 			path = QR;
 			sourceTree = "<group>";
@@ -1212,6 +1215,14 @@
 			path = QRAlert;
 			sourceTree = "<group>";
 		};
+		1EEB0DFE7902F17590836281 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				1EEB096BD4ADFD4268F834E5 /* QRProtocolSdk.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		1EEB0F498511D14C8B27691F /* Balance */ = {
 			isa = PBXGroup;
 			children = (
@@ -1609,6 +1620,7 @@
 				2DD4583CD2AADC9531A4BA37 /* HomeVC.swift in Sources */,
 				1EEB0675D08710B6E95142C7 /* QRTransactionClient.swift in Sources */,
 				1EEB06B4F80A63B254BA5032 /* QRBalance.swift in Sources */,
+				1EEB0D730049DA58EBA5009C /* QRProtocolSdk.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

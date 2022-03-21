@@ -9,10 +9,6 @@
 import UIKit
 import Lottie
 
-protocol QRTransactionIsProcessSdkProtocol {
-    func didGoBackToHome()
-    func didGoToHistoryList()
-}
 
 struct QRTransactionIsProcessPayload {
     var titleLabelText: String?
@@ -40,7 +36,7 @@ class QRTransactionIsProcessViewController: UIViewController, UIGestureRecognize
     
 
 
-    var delegateSdk: QRTransactionIsProcessSdkProtocol?
+    var delegateSdk: QRProtocolSdk?
     var qrNewRouter: QRNewRouter?
 
     var qrTransactionIsProcessPayload: QRTransactionIsProcessPayload?
@@ -108,7 +104,7 @@ extension QRTransactionIsProcessViewController {
 
             //MARK: perlu dibikin delegate
             //MARK: Delegate
-            self.delegateSdk?.didGoBackToHome()
+            self.delegateSdk?.didGoBackToHome(viewController: self)
 //            AppState.switchToHome(completion: nil)
         }
 
@@ -119,8 +115,8 @@ extension QRTransactionIsProcessViewController {
 
             //ini harusnya ke riwayat history by delegate maupun secara langsung
             //MARK: Delegate
-            self.delegateSdk?.didGoToHistoryList()
-            self.viewModel.navigateToHistoryListPage()
+            self.delegateSdk?.didGoToHistoryList(viewController: self)
+//            self.viewModel.navigateToHistoryListPage()
         }
 
     }
@@ -139,17 +135,19 @@ extension QRTransactionIsProcessViewController {
 
             //MARK: Perlu dibikin delegate
             //MARK: Delegate
-            self.delegateSdk?.didGoBackToHome()
+            self.delegateSdk?.didGoBackToHome(viewController: self)
 //            AppState.switchToHome(completion: nil)
         }
     }
 }
 
 extension QRTransactionIsProcessViewController: QRTransactionIsProcessViewModelProtocol {
+
+// this of 2 function were not functioning in SDK (only for test)
     func goToHome(){
 
         //ini delegate
-        self.delegateSdk?.didGoBackToHome()
+//        self.delegateSdk?.didGoBackToHome()
 //        DispatchQueue.main.async {
 //            for controller in self.navigationController!.viewControllers as Array {
 //                if controller.isKind(of: MainHomeVC.self) {
@@ -161,7 +159,7 @@ extension QRTransactionIsProcessViewController: QRTransactionIsProcessViewModelP
     }
 
     func goToHistoryPage(){
-        self.delegateSdk?.didGoToHistoryList()
+//        self.delegateSdk?.didGoToHistoryList()
 //        self.qrNewRouter?.navigateToHistoryPage()
 
     }

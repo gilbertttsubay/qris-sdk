@@ -7,20 +7,7 @@ import Foundation
 import Alamofire
 
 
-//public protocol QRClientProtocol{
-//    func getAuthToken() -> String
-//    func getUserToken() -> String
-//}
 
-enum BuildModePaylater {
-    case sit
-    case uat
-    case prod
-}
-
-protocol QRPaylaterClientProtocol{
-    func getBuildMode() -> BuildMode
-}
 public struct QRPaylaterClient {
     var delegateSdk: ClientProtocol?
 
@@ -30,7 +17,6 @@ public struct QRPaylaterClient {
     var urlBaseQrisService = QRConstant.QRIS_SIT_API
 
 
-    //MARK: How to make delegate with this?
     init(){
     }
 

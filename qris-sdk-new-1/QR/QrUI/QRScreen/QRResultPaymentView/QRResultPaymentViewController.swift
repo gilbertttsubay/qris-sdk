@@ -9,9 +9,6 @@
 import UIKit
 import Lottie
 
-protocol QRResultPaymentViewControllerProtocol{
-    func didGoBackToHome()
-}
 
 struct QRResultPaymentViewControllerPayload {
     var merchantName: String?
@@ -34,7 +31,7 @@ class QRResultPaymentViewController: UIViewController, UIGestureRecognizerDelega
     
     @IBOutlet weak var lottieAnimationView: QRLottieAnimationView!
 
-    var delegateSdk: QRResultPaymentViewControllerProtocol?
+    var delegateSdk: QRProtocolSdk?
 
 
     var productName: String?
@@ -228,7 +225,7 @@ extension QRResultPaymentViewController: QRResultPaymentViewModelProtocol {
 
         self.topButton.coreButton.addTapGestureRecognizerQR {
             //MARK: perlu dibikin delegate
-            self.delegateSdk?.didGoBackToHome()
+            self.delegateSdk?.didGoBackToHome(viewController: self)
 //            AppState.switchToHome(completion: nil)
         }
 
@@ -257,7 +254,7 @@ extension QRResultPaymentViewController: QRResultPaymentViewModelProtocol {
         self.bottomButton.coreButton.addTapGestureRecognizerQR {
 
             //MARK: Perlu dibikin delegate
-            self.delegateSdk?.didGoBackToHome()
+            self.delegateSdk?.didGoBackToHome(viewController: self)
 //            AppState.switchToHome(completion: nil)
         }
     }

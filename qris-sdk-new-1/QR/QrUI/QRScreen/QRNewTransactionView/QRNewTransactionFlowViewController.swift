@@ -9,11 +9,6 @@
 import UIKit
 
 
-//catetan
-//1. setup vm protocol belom
-protocol QRNewTransactionFlowViewControllerProtocol {
-    func didTipsMoreThanZero(value: Int)
-}
 
 
 class QRNewTransactionFlowViewController: UIViewController {
@@ -30,7 +25,7 @@ class QRNewTransactionFlowViewController: UIViewController {
 
 
     var viewModel: QRNewTransactionFlowViewModel = QRNewTransactionFlowViewModel()
-    var delegate: QRNewTransactionFlowViewControllerProtocol?
+    var delegateSdk: QRProtocolSdk?
 
     var qrPLMCBillDetailPaymentTVCell: QRPLMCBillDetailPaymentTVCell?
 
@@ -304,7 +299,6 @@ extension QRNewTransactionFlowViewController: QRDetailTransactionTvCellProtocol 
                 amount += Int(tempAmnt) ?? 0
                 self.viewModel.totalAmountTransaction = amount
                 self.viewModel.qrPaymentAfterInputPinPayloadBuilder()
-                self.delegate?.didTipsMoreThanZero(value: Int(value ?? "0") ?? 0)
 
                 self.checkEnableButtonIfBalanceIsNotEnough()
 
@@ -366,7 +360,7 @@ extension QRNewTransactionFlowViewController: QRNewTransactionFlowViewModelProto
 
     func didGoToLoginPageFromTransactionProcess(){
         // delegasi sdk
-//        AppState.switchToLoginPin(completion: nil)
+        self.delegateSdk?.didUnAuthorized(viewControler: self)
     }
 
     //MARK: Paylater transaksi

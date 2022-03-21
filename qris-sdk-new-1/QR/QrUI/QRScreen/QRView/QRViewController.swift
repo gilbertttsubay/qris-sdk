@@ -37,6 +37,9 @@ class QRViewController: UIViewController{
     var galeryPicker = QRGaleryPicker()
     var qrReader = QRNewReader()
 
+    //delegate
+    var delegateSdk: QRProtocolSdk?
+
 
     struct QRVCProperty{
         static let qrStoryBoardName = "QRStoryBoard"
@@ -227,8 +230,8 @@ extension QRViewController: QRViewModelProtocol {
     }
 
     func goToLoginPage(){
-//            AppState.switchToLoginPin(completion: nil)
 
+        self.delegateSdk?.didUnAuthorized(viewControler: self)
     }
 
 
@@ -287,8 +290,10 @@ extension QRViewController: QRGaleryPickerProtocol {
     }
     
     func didFailedSelectImage() {
-        self.showErrorQR()
-
+        DispatchQueue.main.async{
+            self.stateLoadingQR(state: .dismiss)
+            self.setupPopUp()
+        }
     }
     
     func didAuthorizedOpenGalery() {
