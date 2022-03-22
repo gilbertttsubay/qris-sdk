@@ -15,6 +15,7 @@ struct QRGetDetailTransaksiByIdDtoViewData{
     var reconcileCode: String?
     var refCustomerPan: String?
     var merchantQrID : Int?
+    var nationalMerchantId: String?
 
     var createdAt: String?
 
@@ -40,6 +41,7 @@ struct QRGetDetailTransaksiByIdDtoViewData{
         self.transactionNumber = qrGetDetailTransaksiResponse?.transactionNumber
         self.refCustomerPan = qrGetDetailTransaksiResponse?.refCustomerPan
         self.reconcileCode = qrGetDetailTransaksiResponse?.reconcileCode
+        self.nationalMerchantId = qrGetDetailTransaksiResponse?.refNationalMerchantID
 
 
         if let transactionHasAcquirer = qrGetDetailTransaksiResponse?.transactionHasAcquirer{

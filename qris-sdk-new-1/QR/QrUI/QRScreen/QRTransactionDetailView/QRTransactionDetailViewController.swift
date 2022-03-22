@@ -186,12 +186,12 @@ extension QRTransactionDetailViewController {
             let noReff = self.viewModel?.qrGetDetailTransaksiByIdDtoViewData?.reconcileCode ?? "-"
 
 
-            let idMerchant = self.viewModel?.qrGetDetailTransaksiByIdDtoViewData?.merchantPanFromTransactionHasAcquirer ?? "-"
+            let idMerchant = self.viewModel?.qrGetDetailTransaksiByIdDtoViewData?.nationalMerchantId ?? "-"
             let kodeMerchant = String(self.viewModel?.qrGetDetailTransaksiByIdDtoViewData?.merchantQrID ?? 0) ?? "-"
             let namaMerchant =  self.viewModel?.qrGetDetailTransaksiByIdDtoViewData?.merchantName ?? "-"
             let lokasiMerchant = self.viewModel?.qrGetDetailTransaksiByIdDtoViewData?.merchantCity ?? "-"
             let idTerminal = self.viewModel?.qrGetDetailTransaksiByIdDtoViewData?.terminalLabel ?? "-"
-            let nominal = "\(self.viewModel?.qrGetDetailTransaksiByIdDtoViewData?.basicPrice ?? 0)"
+            let nominal = "\(self.viewModel?.qrGetDetailTransaksiByIdDtoViewData?.totalPrice ?? 0)"
             let totalBayar = "\(self.viewModel?.qrGetDetailTransaksiByIdDtoViewData?.totalPrice ?? 0)"
             self.detailModels = QRAPTransactionDetailPopupModel(
             nameImages: "",
