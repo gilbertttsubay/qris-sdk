@@ -32,10 +32,7 @@ class HomeVC: UIViewController {
     }
 
     @IBAction func scanQrisPressed(_ sender: UIButton) {
-        guard let vcQR = UIStoryboard(name:QRConstant.qrStoryBoardName, bundle:nil).instantiateViewController(withIdentifier: QRConstant.qrViewControllerIdentifier) as? QRViewController else {
-            print("gagal")
-            return
-        }
+        let vcQR = QRViewController(nibName: "QRViewController", bundle: nil)
 
         let navigationController = UINavigationController(rootViewController: vcQR)
         self.present(navigationController, animated: true, completion: nil)

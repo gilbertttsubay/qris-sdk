@@ -161,6 +161,8 @@
 		0D1A81FE27E1C1F3007B5984 /* BarlowExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0D1A815C27E1C1F3007B5984 /* BarlowExtraBold.ttf */; };
 		0D1A81FF27E1C1F3007B5984 /* BarlowThin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0D1A815D27E1C1F3007B5984 /* BarlowThin.ttf */; };
 		0D1A820027E1C1F3007B5984 /* CacheAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1A815F27E1C1F3007B5984 /* CacheAuthentication.swift */; };
+		0D7B4AB927EACCDD003642B3 /* QRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D7B4AB827EACCDD003642B3 /* QRViewController.xib */; };
+		0D7B4ABB27EACD6C003642B3 /* QRNewTransactionFlowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D7B4ABA27EACD6C003642B3 /* QRNewTransactionFlowViewController.xib */; };
 		1EEB01B272B4243786A35370 /* QRCodeResp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB08AB829A83C5228F8E92 /* QRCodeResp.swift */; };
 		1EEB02D0B97CB07FCAA3E47F /* QRAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB09EDDFFC9529F521F8C5 /* QRAlert.swift */; };
 		1EEB034A88EE62FC9C851640 /* QRPaylaterMauCashModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEB081A913291C3E91935F2 /* QRPaylaterMauCashModel.swift */; };
@@ -346,6 +348,8 @@
 		0D1A815C27E1C1F3007B5984 /* BarlowExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BarlowExtraBold.ttf; sourceTree = "<group>"; };
 		0D1A815D27E1C1F3007B5984 /* BarlowThin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BarlowThin.ttf; sourceTree = "<group>"; };
 		0D1A815F27E1C1F3007B5984 /* CacheAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheAuthentication.swift; sourceTree = "<group>"; };
+		0D7B4AB827EACCDD003642B3 /* QRViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRViewController.xib; sourceTree = "<group>"; };
+		0D7B4ABA27EACD6C003642B3 /* QRNewTransactionFlowViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QRNewTransactionFlowViewController.xib; sourceTree = "<group>"; };
 		1EEB0160EFF3C6DFDD222679 /* QRBalance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRBalance.swift; sourceTree = "<group>"; };
 		1EEB026D1898173C2CF83030 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
 		1EEB081A913291C3E91935F2 /* QRPaylaterMauCashModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRPaylaterMauCashModel.swift; sourceTree = "<group>"; };
@@ -817,6 +821,7 @@
 				0D1A80DE27E1C1F2007B5984 /* QRViewModel.swift */,
 				0D1A80DF27E1C1F2007B5984 /* InquiryViewData */,
 				0D1A80E227E1C1F3007B5984 /* QRViewController.swift */,
+				0D7B4AB827EACCDD003642B3 /* QRViewController.xib */,
 			);
 			path = QRView;
 			sourceTree = "<group>";
@@ -903,6 +908,7 @@
 			children = (
 				0D1A80FB27E1C1F3007B5984 /* QRNewTransactionFlowViewModel.swift */,
 				0D1A80FC27E1C1F3007B5984 /* QRNewTransactionFlowViewController.swift */,
+				0D7B4ABA27EACD6C003642B3 /* QRNewTransactionFlowViewController.xib */,
 			);
 			path = QRNewTransactionView;
 			sourceTree = "<group>";
@@ -1409,6 +1415,7 @@
 				0D1A818F27E1C1F3007B5984 /* QRTransactionDetailBottomTVCell.xib in Resources */,
 				0D1A81CC27E1C1F3007B5984 /* QRButton.xib in Resources */,
 				0D1A818927E1C1F3007B5984 /* QRInputKeyboardView.xib in Resources */,
+				0D7B4ABB27EACD6C003642B3 /* QRNewTransactionFlowViewController.xib in Resources */,
 				0D1A81FA27E1C1F3007B5984 /* BarlowExtraLight.ttf in Resources */,
 				0D1A816227E1C1F3007B5984 /* UI in Resources */,
 				0D1A81F127E1C1F3007B5984 /* InterRegular.ttf in Resources */,
@@ -1442,6 +1449,7 @@
 				0D1A817A27E1C1F3007B5984 /* QRPLMCDetailLoanTVCell.xib in Resources */,
 				0D1A81D927E1C1F3007B5984 /* QRAPButtonAtom.xib in Resources */,
 				0D1A816C27E1C1F3007B5984 /* QRDetailPaymentTVCellAstrapay.xib in Resources */,
+				0D7B4AB927EACCDD003642B3 /* QRViewController.xib in Resources */,
 				0D1A81F627E1C1F3007B5984 /* InterBlack.ttf in Resources */,
 				0D1A817227E1C1F3007B5984 /* QRPopUpPIN.xib in Resources */,
 				2DD459F9A2CAE43B9DC87D43 /* failedLottie.json in Resources */,

@@ -27,6 +27,7 @@ target 'qris-sdk-new-1' do
   # pod 'SDWebImage'
   pod 'SkeletonView'
 
+
   #guntur
   pod 'TTSegmentedControl', '~>0.4.9'
 

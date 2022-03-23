@@ -51,6 +51,7 @@ class QRNewTransactionFlowViewController: UIViewController {
     var heightKeyboard : CGFloat = 250
 
     static let identifier = VCProperty.identifier
+    static let nibName = "QRNewTransactionFlowViewController"
     
     
     //setup bagian tabel dan teman temannya

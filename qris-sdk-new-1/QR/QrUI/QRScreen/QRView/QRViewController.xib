@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QRViewController" customModule="qris_sdk_new_1" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomLabel" destination="p7c-4n-7Sb" id="xsv-EL-W34"/>
+                <outlet property="iconImageQris" destination="bTD-Ow-yeh" id="cVc-zQ-7SO"/>
+                <outlet property="qrCameraControlView" destination="gAf-zz-jbW" id="BZF-2e-X0h"/>
+                <outlet property="qrCameraView" destination="Mi5-3x-jrb" id="jC9-IQ-26Y"/>
+                <outlet property="topLabel" destination="p7c-4n-7Sb" id="HMJ-68-g0j"/>
+                <outlet property="view" destination="fbe-xP-Jlj" id="a9S-Lu-Al9"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="fbe-xP-Jlj">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mi5-3x-jrb" userLabel="Qr Camera View" customClass="QRCameraView" customModule="qris_sdk_new_1" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" systemColor="systemRedColor"/>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bTD-Ow-yeh">
+                    <rect key="frame" x="165" y="712" width="84" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="84" id="Msu-n0-QVU"/>
+                        <constraint firstAttribute="height" constant="47" id="vdZ-bd-qC4"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7c-4n-7Sb" userLabel="Top Label">
+                    <rect key="frame" x="186" y="687" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" restorationIdentifier="QRCameraControlViewIdentifier" translatesAutoresizingMaskIntoConstraints="NO" id="gAf-zz-jbW" customClass="QRCameraControlView" customModule="qris_sdk_new_1" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="767" width="414" height="129"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="129" id="CdV-3R-fDe"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="T7q-5l-iTX"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Mi5-3x-jrb" firstAttribute="centerX" secondItem="fbe-xP-Jlj" secondAttribute="centerX" id="15e-Bq-X9V"/>
+                <constraint firstItem="bTD-Ow-yeh" firstAttribute="top" secondItem="p7c-4n-7Sb" secondAttribute="bottom" constant="4" id="9Ok-mc-p8x"/>
+                <constraint firstItem="T7q-5l-iTX" firstAttribute="trailing" secondItem="gAf-zz-jbW" secondAttribute="trailing" id="A0C-MQ-Nnq"/>
+                <constraint firstItem="Mi5-3x-jrb" firstAttribute="centerY" secondItem="fbe-xP-Jlj" secondAttribute="centerY" id="LNd-mY-JbX"/>
+                <constraint firstItem="Mi5-3x-jrb" firstAttribute="width" secondItem="fbe-xP-Jlj" secondAttribute="width" id="dN7-Nd-5hk"/>
+                <constraint firstItem="gAf-zz-jbW" firstAttribute="leading" secondItem="T7q-5l-iTX" secondAttribute="leading" id="dtv-cb-yRF"/>
+                <constraint firstAttribute="bottom" secondItem="gAf-zz-jbW" secondAttribute="bottom" id="iPp-qB-f1Z"/>
+                <constraint firstItem="Mi5-3x-jrb" firstAttribute="height" secondItem="fbe-xP-Jlj" secondAttribute="height" id="lDw-oo-vfw"/>
+                <constraint firstItem="gAf-zz-jbW" firstAttribute="top" secondItem="bTD-Ow-yeh" secondAttribute="bottom" constant="8" id="reH-8i-Q2i"/>
+                <constraint firstItem="bTD-Ow-yeh" firstAttribute="centerX" secondItem="T7q-5l-iTX" secondAttribute="centerX" id="t5F-ax-kG5"/>
+                <constraint firstItem="p7c-4n-7Sb" firstAttribute="centerX" secondItem="fbe-xP-Jlj" secondAttribute="centerX" id="wNB-bE-B3e"/>
+            </constraints>
+            <point key="canvasLocation" x="-123" y="-55"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

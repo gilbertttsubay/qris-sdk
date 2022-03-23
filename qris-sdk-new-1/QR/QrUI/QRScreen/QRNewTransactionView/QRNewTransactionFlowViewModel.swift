@@ -238,16 +238,18 @@ extension QRNewTransactionFlowViewModel {
                     return
                 }
                 if qrTransactionPinResponse.needOtp == true {
-                    self.delegate?.didNeedOtp()
                     self.qrTransactionPinResponse = qrTransactionPinResponse
                     self.otpId = String(qrTransactionPinResponse.otp?.otpId ?? 0)
-                } else {
+                    self.delegate?.didNeedOtp()
+
+                    return
+                }
                     if self.isPaylater {
                         self.delegate?.didPostToTransactionPaylaterThroughPin()
                         return
                     }
+
                     self.delegate?.didSuccessPostToTransactionPin(qrTransactionPinResponse: qrTransactionPinResponse)
-                }
                     print("Post to transaction pin is sukses")
                 case false:
                     if let isTimeout = result.isTimeOut {
@@ -289,17 +291,20 @@ extension QRNewTransactionFlowViewModel {
                             self.delegate?.didFailedPostToTransactionPinBecauseOtpRequestLimitExceeded()
                             return
                         }
+                    }
 
-                        if let responseCode = result.responseCode {
-                            if responseCode == 401 {
-                                self.delegate?.didGoToLoginPageFromTransactionProcess()
-                                return
-                            }
-                            if responseCode >= 400{
-                                self.delegate?.didFailedPostToTransactionPinBecauseBadRequest()
-                                return
-                            }
+                    if let responseCode = result.responseCode {
+                        if responseCode == 401 {
+                            self.delegate?.didGoToLoginPageFromTransactionProcess()
+                            return
                         }
+                        if responseCode >= 400{
+                            self.delegate?.didFailedPostToTransactionPinBecauseBadRequest()
+                            return
+                        }
+                    }else {
+                        self.delegate?.didFailedPostToTransactionPinBecauseBadRequest()
+                        return
                     }
                 print(result.message + " ini adalah errornya")
                 //MARK: Harus dibikin logic atau alert jika post ke transaction pin jika dia membalikkan error
@@ -338,24 +343,23 @@ extension QRNewTransactionFlowViewModel {
                     }
                 }
                if let astrapayError = result.errorData {
-                   var code = astrapayError.details[0].code
-                   if code == "OTP-NOT-MATCH"{
-                       self.delegate?.didFailedTransactionByOtpBecauseOtpNotMatch()
-                       return
-                   }
+                   for detail in  astrapayError.details{
+                       if detail.code == "OTP-NOT-MATCH"{
+                           self.delegate?.didFailedTransactionByOtpBecauseOtpNotMatch()
+                           return
+                       }
 
-                   if code == "OTP-SUBMIT-LOCK"{
-                        self.delegate?.didFailedPostToTransactionOtpBecauseSubmitLock()
-                       return
-                   }
+                       if detail.code == "OTP-SUBMIT-LOCK"{
+                           self.delegate?.didFailedPostToTransactionOtpBecauseSubmitLock()
+                           return
+                       }
 
-                   if code == "OTP-EXPIRED"{
-                       self.delegate?.didFailedPostToTransactionOtpBecauseOtpExpired()
-                       return
+                       if detail.code == "OTP-EXPIRED"{
+                           self.delegate?.didFailedPostToTransactionOtpBecauseOtpExpired()
+                           return
+                       }
                    }
                }
-                //MARK: perlu dibikin logic jika error
-                print(false)
 
                 if let responseCode = result.responseCode {
                     if responseCode == 401 {
@@ -366,6 +370,9 @@ extension QRNewTransactionFlowViewModel {
                         self.delegate?.didFailedPostToTransactionPinBecauseBadRequest()
                         return
                     }
+                } else {
+                    self.delegate?.didFailedPostToTransactionPinBecauseBadRequest()
+                    return
                 }
             }
 
@@ -396,11 +403,16 @@ extension QRNewTransactionFlowViewModel{
                     return
                 }
 
-
-
                 for detail in astrapayError.details{
                     if detail.code == "OTP-REQUEST-LOCK" {
                         self.delegate?.didFailedResendOtpBecauseOtpRequestLimitExceeded()
+                    }
+                }
+
+                if let responseCode = result.responseCode {
+                    if responseCode == 401 {
+                        self.delegate?.didGoToLoginPageFromTransactionProcess()
+                        return
                     }
                 }
                 break
@@ -469,8 +481,14 @@ extension QRNewTransactionFlowViewModel {
                 }
 
                 self.delegate?.didSuccessGetDetailTransaksiById(qrGetDetailTransaksiByIdResponse: data)
+                break
             case false:
-                fatalError("Get Detail Transaksi By Id is failed")
+                if let responseCode = result.responseCode {
+                    if responseCode == 401 {
+                        self.delegate?.didGoToLoginPageFromTransactionProcess()
+                        return
+                    }
+                }
 
             }
       }
