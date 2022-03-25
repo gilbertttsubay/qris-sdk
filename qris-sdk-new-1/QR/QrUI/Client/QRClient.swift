@@ -275,7 +275,7 @@ extension QRClient{
                     let responseErrorPostOtp = try? JSONDecoder().decode(AstrapayErrorResponse.self, from: responseJson!)
                     print("Error post to transaction otp: \(responseErrorPostOtp)")
                     if let responseErrorPostOtp = responseErrorPostOtp{
-                        completion(QRResponse(status: false, message: response.error?.errorDescription ?? "-", data:nil, errorData: responseErrorPostOtp))
+                        completion(QRResponse(status: false, message: response.error?.errorDescription ?? "-", data:nil, errorData: responseErrorPostOtp, isTimeOut: false, responseCode: response.response?.statusCode))
                     }
             }
             case .failure(let error):

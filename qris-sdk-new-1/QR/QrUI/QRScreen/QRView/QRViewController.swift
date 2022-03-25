@@ -19,6 +19,9 @@ class QRViewController: UIViewController{
     @IBOutlet weak var qrCameraControlView: QRCameraControlView!
     
     @IBOutlet weak var qrCameraView: QRCameraView!
+    
+    
+    static let nibName = "QRViewController"
 
     var qrClient: QRClient = QRClient()
 

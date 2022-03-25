@@ -67,6 +67,13 @@ class QRNewRouter {
     
     //MARK: Navigasi ke transaction detail
     func navigateToTransactionDetailAfterInputAmount(qrInquiryDtoViewData: QRInquiryDtoViewData, amountTransaction: Int){
+        let qrTransactionVC = QRNewTransactionFlowViewController(nibName: QRNewTransactionFlowViewController.nibName, bundle: nil)
+            qrTransactionVC.initVM(qrInquiryDtoViewData: qrInquiryDtoViewData, amountTransaction: amountTransaction)
+
+            self.vc?.navigationController?.pushViewController(qrTransactionVC, animated:true)
+    }
+    
+    func navigateToTransactionDetailAfterInputAmountStoryBoard(qrInquiryDtoViewData: QRInquiryDtoViewData, amountTransaction: Int){
         DispatchQueue.main.async {
             guard let qrTransactionVC = UIStoryboard(name:QRConstant.qrStoryBoardName, bundle:nil).instantiateViewController(withIdentifier: QRNewTransactionFlowViewController.identifier) as? QRNewTransactionFlowViewController else {
                 return
