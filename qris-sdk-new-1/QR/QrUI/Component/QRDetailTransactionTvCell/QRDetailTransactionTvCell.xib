@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="187" id="KGk-i7-Jjw" customClass="QRDetailTransactionTvCell" customModule="astrapay" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="187" id="KGk-i7-Jjw" customClass="QRDetailTransactionTvCell" customModule="qris_sdk_new_1" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="187"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -21,7 +21,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qYf-sT-2Fl">
                         <rect key="frame" x="14" y="16" width="292" height="155"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail Transaksi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rda-Ee-0jQ" customClass="QRUILabelInterSemiBold" customModule="astrapay" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail Transaksi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rda-Ee-0jQ" customClass="QRUILabelInterSemiBold" customModule="qris_sdk_new_1" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="4" width="292" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="QTZ-V1-e3C"/>
@@ -33,7 +33,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Q5-5Z-epu">
                                 <rect key="frame" x="0.0" y="35" width="292" height="21"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jumlah transaksi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3W-Mt-Glb" customClass="QRUILabelInterMedium" customModule="astrapay" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jumlah transaksi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3W-Mt-Glb" customClass="QRUILabelInterMedium" customModule="qris_sdk_new_1" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="130" id="CcQ-jf-2sK"/>
@@ -43,7 +43,7 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp 000.000.000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBf-QF-uo3" customClass="QRUILabelInterRegular" customModule="astrapay" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp 000.000.000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBf-QF-uo3" customClass="QRUILabelInterRegular" customModule="qris_sdk_new_1" customModuleProvider="target">
                                         <rect key="frame" x="130" y="0.0" width="162" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="C4d-uC-NHK"/>
@@ -60,7 +60,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fqw-GP-C8r">
                                 <rect key="frame" x="0.0" y="66" width="292" height="21"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tips" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quA-fI-d7f" customClass="QRUILabelInterMedium" customModule="astrapay" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tips" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quA-fI-d7f" customClass="QRUILabelInterMedium" customModule="qris_sdk_new_1" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="130" id="AG1-rG-vox"/>
@@ -73,7 +73,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kQP-CL-W3R">
                                         <rect key="frame" x="193.5" y="0.0" width="98.5" height="21"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp 00.000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ijr-FO-2N3" customClass="QRUILabelInterRegular" customModule="astrapay" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp 00.000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ijr-FO-2N3" customClass="QRUILabelInterRegular" customModule="qris_sdk_new_1" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="73.5" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="FOD-pN-Zo5"/>
@@ -82,7 +82,7 @@
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="whL-wu-14C" customClass="QRAPButtonAtom" customModule="astrapay" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="whL-wu-14C" customClass="QRAPButtonAtom" customModule="qris_sdk_new_1" customModuleProvider="target">
                                                 <rect key="frame" x="78.5" y="0.0" width="20" height="21"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_edit" translatesAutoresizingMaskIntoConstraints="NO" id="4zP-5N-DMK">
@@ -115,7 +115,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LKH-Lh-d4i">
                                 <rect key="frame" x="0.0" y="118" width="292" height="21"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Bayar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeX-16-bWi" customClass="QRUILabelInterMedium" customModule="astrapay" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Bayar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeX-16-bWi" customClass="QRUILabelInterMedium" customModule="qris_sdk_new_1" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="130" id="JAn-ty-Kyz"/>
@@ -125,7 +125,7 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp 000.000.000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K95-1M-mRv" customClass="QRUILabelInterSemiBold" customModule="astrapay" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp 000.000.000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K95-1M-mRv" customClass="QRUILabelInterSemiBold" customModule="qris_sdk_new_1" customModuleProvider="target">
                                         <rect key="frame" x="130" y="0.0" width="162" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="nOs-MI-D2u"/>

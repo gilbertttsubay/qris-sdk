@@ -46,7 +46,7 @@ class QRNewRouter {
     func navigateToInputAmountAfterScan(model : QRInquiryDtoViewData?){
         if isAbleToNavigate && model != nil{
             self.isAbleToNavigate = false
-            let vcInputAmount = QRInputAmountViewController()
+            let vcInputAmount = QRInputAmountViewController(nibName: QRInputAmountViewController.nibName, bundle: Bundle(identifier: QRConstant.BUNDLE_IDENTIFIER))
             vcInputAmount.initQRPayload(payload: model!)
             self.vc?.navigationController?.pushViewController(vcInputAmount, animated:true)
             self.isAbleToNavigate = true
@@ -55,9 +55,7 @@ class QRNewRouter {
 
     func navigateToTransactionDetailAdjustAmountAllowedFalse(qrInquiryDtoViewData: QRInquiryDtoViewData, userBalanceAstrapay: Int = 0){
         DispatchQueue.main.async {
-            guard let qrTransactionVC = UIStoryboard(name:QRConstant.qrStoryBoardName, bundle:nil).instantiateViewController(withIdentifier: QRNewTransactionFlowViewController.identifier) as? QRNewTransactionFlowViewController else {
-                return
-            }
+            let qrTransactionVC = QRNewTransactionFlowViewController(nibName: QRNewTransactionFlowViewController.nibName, bundle: Bundle(identifier: QRConstant.BUNDLE_IDENTIFIER))
             qrTransactionVC.initVM(qrInquiryDtoViewData: qrInquiryDtoViewData, amountTransaction: Int(qrInquiryDtoViewData.qrInquiryQrisDto?.transactionAmount ?? 0))
 
             self.vc?.navigationController?.pushViewController(qrTransactionVC, animated:true)
@@ -67,7 +65,7 @@ class QRNewRouter {
     
     //MARK: Navigasi ke transaction detail
     func navigateToTransactionDetailAfterInputAmount(qrInquiryDtoViewData: QRInquiryDtoViewData, amountTransaction: Int){
-        let qrTransactionVC = QRNewTransactionFlowViewController(nibName: QRNewTransactionFlowViewController.nibName, bundle: nil)
+        let qrTransactionVC = QRNewTransactionFlowViewController(nibName: QRNewTransactionFlowViewController.nibName, bundle: Bundle(identifier: QRConstant.BUNDLE_IDENTIFIER))
             qrTransactionVC.initVM(qrInquiryDtoViewData: qrInquiryDtoViewData, amountTransaction: amountTransaction)
 
             self.vc?.navigationController?.pushViewController(qrTransactionVC, animated:true)
@@ -90,7 +88,7 @@ class QRNewRouter {
       
         if isAbleToNavigate && qrGetDetailTransaksiByIdDtoViewData != nil{
             self.isAbleToNavigate = false
-            let qrResultPaymentViewController = QRResultPaymentViewController()
+            let qrResultPaymentViewController = QRResultPaymentViewController(nibName: QRResultPaymentViewController.nibName, bundle: Bundle(identifier: QRConstant.BUNDLE_IDENTIFIER))
             var qrPayloadViewProperty = QRResultPaymentViewController.QRPayloadViewProperty(qrGetDetailTransaksiByIdDtoViewData: qrGetDetailTransaksiByIdDtoViewData)
             qrResultPaymentViewController.initQRPayload(payload: qrPayloadViewProperty, isPaylater: isPaylater)
             
@@ -102,7 +100,7 @@ class QRNewRouter {
     func navigateToGetDetailTransaksi(qrGetDetailTransaksiByIdDtoViewData: QRGetDetailTransaksiByIdDtoViewData, isPaylater: Bool = false) {
         if isAbleToNavigate && qrGetDetailTransaksiByIdDtoViewData != nil{
             self.isAbleToNavigate = false
-            let qrDetailTransactionViewController = QRTransactionDetailViewController()
+            let qrDetailTransactionViewController = QRTransactionDetailViewController(nibName: QRTransactionDetailViewController.nibName, bundle: Bundle(identifier: QRConstant.BUNDLE_IDENTIFIER))
             var qrPayloadViewProperty = QRTransactionDetailViewController.QRPayloadViewProperty(qrGetDetailTransaksiByIdDtoViewData: qrGetDetailTransaksiByIdDtoViewData)
             qrDetailTransactionViewController.initQRPayload(payload: qrPayloadViewProperty, isPaylater: isPaylater)
 
@@ -114,7 +112,8 @@ class QRNewRouter {
     func navigateToTransactionIsProcess(qrTransactionIsProcessPayload: QRTransactionIsProcessPayload){
         if isAbleToNavigate && qrTransactionIsProcessPayload != nil{
             self.isAbleToNavigate = false
-            let qrTransactionIsProcessViewController = QRTransactionIsProcessViewController(qrTransactionIsProcessPayload: qrTransactionIsProcessPayload)
+            var qrTransactionIsProcessViewController = QRTransactionIsProcessViewController(qrTransactionIsProcessPayload: qrTransactionIsProcessPayload)
+            
 
             self.vc?.navigationController?.pushViewController(qrTransactionIsProcessViewController, animated: true)
             self.isAbleToNavigate = true

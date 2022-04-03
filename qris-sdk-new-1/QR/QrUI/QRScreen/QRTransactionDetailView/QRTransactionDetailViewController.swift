@@ -14,6 +14,8 @@ class QRTransactionDetailViewController: UIViewController {
     @IBOutlet weak var bagikanButton: QRAPButtonAtom!
     @IBOutlet weak var buttonContainer: UIView!
     
+    static let nibName = "QRTransactionDetailViewController"
+    
     struct VCProperty {
         static let navigationTitle: String = "Lihat Detail Transaksi"
     }

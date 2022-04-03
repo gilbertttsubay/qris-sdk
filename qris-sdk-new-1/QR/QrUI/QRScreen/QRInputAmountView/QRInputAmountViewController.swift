@@ -18,6 +18,8 @@ class QRInputAmountViewController: UIViewController {
     @IBOutlet weak var inputAmountKeyboardView: QRInputKeyboardView!
 
     @IBOutlet weak var viewButton: QRAPButtonAtom!
+    
+    static let nibName = "QRInputAmountViewController"
 
 
 //    var qrPopUP: QRPopUp?

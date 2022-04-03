@@ -30,6 +30,9 @@ class QRResultPaymentViewController: UIViewController, UIGestureRecognizerDelega
     @IBOutlet weak var additionalDate: UILabel!
     
     @IBOutlet weak var lottieAnimationView: QRLottieAnimationView!
+    
+    
+    static let nibName = "QRResultPaymentViewController"
 
     var delegateSdk: QRProtocolSdk?
 
